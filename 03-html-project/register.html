@@ -4,14 +4,12 @@
         <style>
             body{
                     background-color: rgb(181, 238, 238);
-                    text-align: center;
                 }
                 h1{
                     text-align: center;
                     color: black;
                 }
                 h2{
-                    text-align: center;
                     color: rgb(91, 91, 236);
                 }
         </style>
@@ -23,15 +21,15 @@
         <div>
             <form>
                 <label>Full Name :</label>
-                <input type="text" placeholder="Enter your fullname"><br>
+                <input type="text" placeholder="Enter your fullname"><br><br>
                 <label>Email :</label>
-                <input type="email" placeholder="Enter your email"><br>
+                <input type="email" placeholder="Enter your email"><br><br>
                 <label>Password :</label>
-                <input type="password" placeholder="Create password"><br>
+                <input type="password" placeholder="Create password"><br><br>
                 <label>Phone</label>
-                <input type="tel" placeholder="Enter your phone"><br>
+                <input type="tel" placeholder="Enter your phone"><br><br>
                 <label>Age :</label>
-                <input type="text">
+                <input type="text"><br><br>
                 <label>Date of Brith :</label>
                 <input type="date">
             </form>
@@ -39,14 +37,15 @@
         <div>
             <h2>Academic Information</h2>
             <form>
-                <select aria-placeholder="Select Department">
+                <label>Department</label>
+                <select aria-placeholder="Select Department"><br><br>
                     <option>Computer Science</option>
                     <option>Electrical & Electronics</option>
                     <option>Civil</option>
                     <option>Mechanical</option>
                     <option>ADFT</option>
                     <option>Commortial Practice</option>
-                </select>
+                </select><br><br>
                 <label>Year :</label><br>
                 <label>
                     <input type="radio" name="FirstYear" value="FirstYear">First Year
@@ -79,8 +78,8 @@
         <div>
             <h2>About You</h2>
             <foem>
-                <label>Tell Us Something about Yourself :</label><br>
-                <textarea name="Aboutyou" id="Aboutyou" >Write something about you...</textarea>
+                <label>Tell Us Something about Yourself :</label><br><br>
+                <textarea name="Aboutyou" id="Aboutyou" ></textarea>
             </foem>
         </div>  
         <div>
@@ -92,12 +91,8 @@
         <div>
             <form>
                 <button type="submit">Register</button>
+                <button type="reset">Reset</button>
             </form>
-            <div align = "right">
-                <form>
-                    <button type="reset">Reset</button>
-                </form>
-            </div>
         </div> 
     </body>
 </html>
