@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Align Item</title>
+        <style>
+            body{
+                background-color: rgb(244, 207, 159);
+            }
+            h1{
+                text-align: center;
+                color: rgb(184, 164, 10);
+            }
+            .container-center{
+                display: flex;
+                align-items: center;
+                height: 200px;
+                border: 3px solid rgb(138, 182, 244); 
+            }
+            .container-start{
+                display: flex;
+                align-items: flex-start;
+                height: 200px;
+                border: 3px solid rgb(138, 182, 244); 
+            }
+            .container-end{
+                display: flex;
+                align-items: flex-end;
+                height: 200px;
+                border: 3px solid rgb(138, 182, 244); 
+            }
+            .container-stretch{
+                display: flex;
+                align-items: stretch;
+                height: 200px;
+                border: 3px solid rgb(138, 182, 244); 
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Align Item Example</h1>
+        </header>
+        <main>
+            <h1>Align Item Flex Start</h1>
+            <div class="container-start">
+                <div>Item 1</div>
+                <div>Item 2</div>
+            </div>
+            <h1>Align Item Center</h1>
+            <div class="container-center">
+                <div>Item 1</div>
+                <div>Item 2</div>
+            </div>
+            <h1>Align Item Flex End</h1>
+            <div class="container-end">
+                <div>Item 1</div>
+                <div>Item 2</div>
+            </div>
+            <h1>Align Item Stretch</h1>
+            <div class="container-stretch">
+                <div>Item 1</div>
+                <div>Item 2</div>
+            </div>
+        </main>
+    </body>
+</html>
