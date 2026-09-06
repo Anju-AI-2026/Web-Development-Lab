@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Flex Direction</title>
+        <style>
+            body{
+                background-color: blanchedalmond;
+            }
+            h1{
+                color: brown;
+            }
+            .container-row{
+                display: flex;
+                flex-direction: row;
+            }
+            .container-column{
+                display: flex;
+                flex-direction: column;
+            }
+            .container-row-reverse{
+                display: flex;
+                flex-direction: row-reverse;
+            }
+            .container-column-reverse{
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Flext Direction Example
+            </h1>
+        </header>
+        <main>
+            <div class="container-row">
+                <h2>Row Direction</h2>
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+            <div class="container-row-reverse">
+                <h2>RowReverse Direction</h2>
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+            <div class="container-column">
+                <h2>Column Direction</h2>
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+            <div class="container-column-reverse">
+                <h2>Column Reverse Direction</h2>
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+        </main>
+    </body>
+</html>
