@@ -1,3 +1,99 @@
 <html>
-
+    <head>
+        <title>Home Page</title>
+        <style>
+            h1{
+                color: rgba(58, 3, 9, 0.934);
+            }
+            h4{
+                color: rgba(173, 85, 85, 0.671);
+            }
+            p{
+                color: rgb(87, 16, 21);
+            }
+            .body-container{
+                display: flex;
+                border: 1px solid rgb(75, 20, 20);
+                background-color:rgb(244, 202, 209) ;
+            }
+            .container-head-between{
+                display: flex;
+                justify-content: space-between;
+                width: 700px; 
+                border: 1px solid rgb(75, 20, 20);
+                background-color:rgb(231, 169, 179) ;
+            }
+            .container-main-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+                padding: 30px;
+            }
+            .inline-box{
+                display: inline;
+                background-color:rgb(231, 169, 179) ;
+                border: 1px solid rgb(75, 20, 20);;
+                margin: 10px;
+                padding: 10px;
+            }
+            button{
+                color: rgb(231, 169, 179) ;
+            }
+            td {
+                padding: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <section>
+                <div class="container-head-between">
+                    <div>
+                        <h4> 🧁 Sweet Bakery</h4>
+                    </div>
+                    <div class="inline-box">
+                        <button>
+                            <a href="!--home--!">Home</a>
+                        </button>    
+                        <button>
+                            <a href="!--home--!">Menu</a>
+                        </button>
+                        <button>  
+                            <a href="!--home--!">About</a>
+                        </button>   
+                        <button>
+                            <a href="!--home--!">Cart</a>
+                        </button>    
+                    </div>
+                </div>
+            </section>
+        </header>
+        <main>
+            <section>
+                <table> 
+                    <div class="container-main-body"></div>
+                        <tr>
+                            <td>
+                                <div>
+                                    <h1>Freshly Baked</h1>
+                                    <h1>With Love 🩷</h1>
+                                    <p>Sweet treats for every moment</p>
+                                    <p>Made with love for your day.</p>
+                                    <button>
+                                        <a href="!----!">Order Now ➡️</a>
+                                    </button>
+                                </div>    
+                            </td>
+                            <td>      
+                                <div>
+                                    <img src="./media/cupcake.png" alt="Cup Cake" width="350px">
+                                </div>
+                            </td> 
+                        </tr>         
+                    </div>
+                </table>
+            </section>
+        </main>
+    </body>
 </html>
