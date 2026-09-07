@@ -1,99 +1,205 @@
 <html>
     <head>
         <title>Home Page</title>
+
         <style>
-            h1{
+            h1 {
                 color: rgba(58, 3, 9, 0.934);
             }
-            h4{
+
+            h4 {
                 color: rgba(173, 85, 85, 0.671);
             }
-            p{
+
+            p {
                 color: rgb(87, 16, 21);
             }
-            .body-container{
+
+            .body-container {
                 display: flex;
                 border: 1px solid rgb(75, 20, 20);
-                background-color:rgb(244, 202, 209) ;
+                background-color: rgb(244, 202, 209);
             }
-            .container-head-between{
+
+            .container-head-between {
                 display: flex;
                 justify-content: space-between;
-                width: 700px; 
+                width: 1300px;
                 border: 1px solid rgb(75, 20, 20);
-                background-color:rgb(231, 169, 179) ;
+                background-color: rgb(231, 169, 179);
             }
+
             .container-main-body {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 gap: 10px;
                 padding: 30px;
+                color: rgb(250, 210, 218);
             }
-            .inline-box{
+
+            .inline-box-image {
                 display: inline;
-                background-color:rgb(231, 169, 179) ;
-                border: 1px solid rgb(75, 20, 20);;
+                background-color: rgb(231, 169, 179);
+                border: 1px solid rgb(75, 20, 20);
                 margin: 10px;
                 padding: 10px;
             }
-            button{
-                color: rgb(231, 169, 179) ;
+
+            /* Corrected CSS for the four boxes below */
+            .inline-box {
+                display: inline-block;
+                background-color: rgb(246, 169, 169);
+                border: 2px solid rgb(250, 210, 218);
+                margin: 10px;
+                padding: 10px;
+                width: 150px;
+                text-align: center;
+                vertical-align: top;
             }
+
+            button {
+                background-color: rgb(231, 169, 179);
+                border: 1px solid rgb(75, 20, 20);
+                padding: 8px 15px;
+                margin: 5px;
+            }
+
+            button a {
+                color: rgb(75, 20, 20);
+                text-decoration: none;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
             td {
                 padding: 30px;
+                vertical-align: middle;
+            }
+
+            .main-table {
+                border: 1px solid rgb(75, 20, 20);
+                background-color: rgb(244, 202, 209);
             }
         </style>
     </head>
+
     <body>
+
         <header>
             <section>
                 <div class="container-head-between">
+
                     <div>
-                        <h4> 🧁 Sweet Bakery</h4>
+                        <h4>🧁 Sweet Bakery</h4>
                     </div>
-                    <div class="inline-box">
+
+                    <div class="inline-box-image">
                         <button>
-                            <a href="!--home--!">Home</a>
-                        </button>    
-                        <button>
-                            <a href="!--home--!">Menu</a>
+                            <a href="index.html">Home</a>
                         </button>
-                        <button>  
-                            <a href="!--home--!">About</a>
-                        </button>   
+
                         <button>
-                            <a href="!--home--!">Cart</a>
-                        </button>    
+                            <a href="menu.html">Menu</a>
+                        </button>
+
+                        <button>
+                            <a href="about.html">About</a>
+                        </button>
+
+                        <button>
+                            <a href="cart.html">Cart</a>
+                        </button>
                     </div>
+
                 </div>
             </section>
         </header>
+
         <main>
+
             <section>
-                <table> 
-                    <div class="container-main-body"></div>
-                        <tr>
-                            <td>
-                                <div>
-                                    <h1>Freshly Baked</h1>
-                                    <h1>With Love 🩷</h1>
-                                    <p>Sweet treats for every moment</p>
-                                    <p>Made with love for your day.</p>
-                                    <button>
-                                        <a href="!----!">Order Now ➡️</a>
-                                    </button>
-                                </div>    
-                            </td>
-                            <td>      
-                                <div>
-                                    <img src="./media/cupcake.png" alt="Cup Cake" width="350px">
-                                </div>
-                            </td> 
-                        </tr>         
-                    </div>
+
+                <table class="main-table">
+                    <tr>
+
+                        <td>
+                            <div class="container-main-body">
+
+                                <h1>Freshly Baked</h1>
+                                <h1>With Love 🩷</h1>
+
+                                <p>Sweet treats for every moment</p>
+                                <p>Made with love for your day.</p>
+
+                                <button>
+                                    <a href="menu.html">Order Now ➡️</a>
+                                </button>
+
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <img
+                                    src="./media/cupcake.png"
+                                    alt="Cup Cake"
+                                    width="350px"
+                                >
+                            </div>
+                        </td>
+
+                    </tr>
                 </table>
+
             </section>
+
+            <section>
+
+                <div class="inline-box">
+                    🧁
+                    <br>
+                    <h4>Cupcake</h4>
+                    <br>
+                    Soft, Fluffy, and
+                    <br>
+                    full of flavors.
+                </div>
+
+                <div class="inline-box">
+                    🎂
+                    <br>
+                    <h4>Cakes</h4>
+                    <br>
+                    For birthdays
+                    <br>
+                    Celebration and more.
+                </div>
+
+                <div class="inline-box">
+                    🍪
+                    <br>
+                    <h4>Cookies</h4>
+                    <br>
+                    Crispy, chewy
+                    <br>
+                    and delicious.
+                </div>
+
+                <div class="inline-box">
+                    🧃
+                    <br>
+                    <h4>Beverages</h4>
+                    <br>
+                    Coffee, tea and refreshing drinks
+                </div>
+
+            </section>
+
         </main>
+
     </body>
 </html>
