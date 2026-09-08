@@ -1,0 +1,15 @@
+.body-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.game-card{
+    flex: 1;
+    min-width: 200px;
+}
+h1{
+    align-items: center;
+    color: rgba(115, 2, 125, 0.925);
+}
