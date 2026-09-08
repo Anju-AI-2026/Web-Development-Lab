@@ -194,3 +194,22 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* =========================
+   BOOKS PAGE INTRODUCTION
+========================= */
+
+.books-intro {
+    padding: 20px 0;
+}
+
+.books-intro h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.books-intro p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
