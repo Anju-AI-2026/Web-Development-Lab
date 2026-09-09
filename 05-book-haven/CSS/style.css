@@ -213,3 +213,79 @@ footer p {
     margin: 10px 0;
     line-height: 1.5;
 }
+
+/* =========================
+   BOOK CATEGORY NAVIGATION
+========================= */
+
+.book-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.book-categories a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fffaf5;
+    color: #17324a;
+    text-decoration: none;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+}
+
+.book-categories a:hover {
+    background-color: #315873;
+    color: white;
+}
+/* =========================
+   BOOK COLLECTION
+========================= */
+
+.book-collection {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+/* =========================
+   BOOK CARD
+========================= */
+
+.book-card {
+    width: 25%;
+    padding: 20px;
+    background-color: #fffaf5;
+    border: 1px solid #dddddd;
+}
+/* =========================
+   BOOK CARD IMAGE
+========================= */
+
+.book-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+/* =========================
+   BOOK CARD TEXT
+========================= */
+
+.book-card h3 {
+    font-family: Georgia, serif;
+    margin: 15px 0 8px;
+}
+
+.book-card p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+/* =========================
+   BOOK PRICE
+========================= */
+
+.book-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
