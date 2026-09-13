@@ -1,0 +1,33 @@
+/* Basic Page Styling */
+body{
+    font-family: Arial , sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Heading */
+h1{
+    text-align: center;
+}
+
+/* Parent: controls the cards */
+.music-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width : 600px) {
+    .music-container{
+        flex-direction: column;
+    }
+}
+
+/* Children: the individual cards */
+.card{
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border: 2px solid #cccccc;
+}
