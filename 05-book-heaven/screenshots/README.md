@@ -1,4 +1,3 @@
-
 ## 🏠 1. Homepage & Book Collection
 
 | Homepage                                                                                  | Books Page                                                                              |
@@ -8,3 +7,11 @@
 
 ---
 
+## 📚 2. Book Navigation & Categories
+
+| Books Menu — View 1                                                                      | Books Menu — View 2                                                                      |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| The first view of the book navigation menu, showcasing the available browsing options.   | The second view of the book navigation menu, showing additional browsing options.        |
+| ![Books Menu View 1](./books-menu-01.png) <br> [📎 View Screenshot](./books-menu-01.png) | ![Books Menu View 2](./books-menu-02.png) <br> [📎 View Screenshot](./books-menu-02.png) |
+
+---
