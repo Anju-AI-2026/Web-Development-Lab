@@ -15,3 +15,10 @@
 | ![Books Menu View 1](./books-menu-01.png) <br> [📎 View Screenshot](./books-menu-01.png) | ![Books Menu View 2](./books-menu-02.png) <br> [📎 View Screenshot](./books-menu-02.png) |
 
 ---
+
+## ℹ️ 3. About & Contact Pages
+
+| About Page                                                                              | Contact Page                                                                                  |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| The About page, introducing the bookstore and its purpose.                              | The Contact page, providing visitors with a dedicated section for contacting the bookstore.   |
+| ![Book Heaven About Page](./about-page.png) <br> [📎 View Screenshot](./about-page.png) | ![Book Heaven Contact Page](./contact-page.png) <br> [📎 View Screenshot](./contact-page.png) |
