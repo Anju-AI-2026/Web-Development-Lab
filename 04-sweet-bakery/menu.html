@@ -1,126 +1,229 @@
-<html>
-    <head>
-        <title>Menu Page</title>
-        <style>
-            h1 {
-                color: rgba(58, 3, 9, 0.934);
-            }
 
-            h4 {
-                color: rgba(173, 85, 85, 0.671);
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            p {
-                color: rgb(87, 16, 21);
-            }
+    <title>Our Menu | Sweet Bakery</title>
 
-            .container-head-between {
-                display: flex;
-                justify-content: space-between;
-                width: 1300px;
-                border: 1px solid rgb(75, 20, 20);
-                background-color: rgb(231, 169, 179);
-            }
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
 
-            .container-main-body {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 10px;
-                padding: 30px;
-                color: rgb(250, 210, 218);
-            }
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="index.html" class="logo">🧁 Sweet Bakery</a>
 
-            .inline-box-image {
-                display: inline;
-                background-color: rgb(231, 169, 179);
-                border: 1px solid rgb(75, 20, 20);
-                margin: 10px;
-                padding: 10px;
-            }
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="about.html">About</a>
+            <a href="my-cart.html">My Cart 🛒</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-            /* Corrected CSS for the four boxes below */
-            .inline-box {
-                display: inline-block;
-                background-color: rgb(246, 169, 169);
-                border: 2px solid rgb(250, 210, 218);
-                margin: 10px;
-                padding: 10px;
-                width: 150px;
-                text-align: center;
-                vertical-align: top;
-            }
+    <!-- Menu Heading -->
+    <section class="menu-heading">
+        <h1>Our Menu</h1>
+        <p>A delicious selection of cakes, pastries, cookies, and more!</p>
+    </section>
 
-            button {
-                background-color: rgb(231, 169, 179);
-                border: 1px solid rgb(75, 20, 20);
-                padding: 8px 15px;
-                margin: 5px;
-            }
+    <!-- Category Navigation -->
+    <section class="menu-categories">
+        <a href="#all-products">All</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#pastries">Pastries</a>
+        <a href="#cookies">Cookies</a>
+        <a href="#desserts">Desserts</a>
+    </section>
 
-            button a {
-                color: rgb(75, 20, 20);
-                text-decoration: none;
-            }
+    <!-- Cakes -->
+    <section class="menu-section" id="cakes">
+        <h2>Cakes</h2>
 
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
+        <div class="product-grid">
 
-            td {
-                padding: 30px;
-                vertical-align: middle;
-            }
+            <div class="product-card">
+                <img src="media/images/cake1.jpg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p class="price">₹450</p>
+                <button class="btn add-to-cart"
+                    data-id="cake1"
+                    data-name="Chocolate Cake"
+                    data-price="450">
+                    Add to Cart
+                </button>
+            </div>
 
-            .main-table {
-                border: 1px solid rgb(75, 20, 20);
-                background-color: rgb(244, 202, 209);
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <section>
-                    <div class="container-head-between">
+            <div class="product-card">
+                <img src="media/images/cake2.jpg" alt="Strawberry Cake">
+                <h3>Strawberry Cake</h3>
+                <p class="price">₹500</p>
+                <button class="btn add-to-cart"
+                    data-id="cake2"
+                    data-name="Strawberry Cake"
+                    data-price="500">
+                    Add to Cart
+                </button>
+            </div>
 
-                        <div>
-                            <h4>🧁 Sweet Bakery</h4>
-                        </div>
+            <div class="product-card">
+                <img src="media/images/cake3.jpg" alt="Vanilla Cake">
+                <h3>Vanilla Cake</h3>
+                <p class="price">₹400</p>
+                <button class="btn add-to-cart"
+                    data-id="cake3"
+                    data-name="Vanilla Cake"
+                    data-price="400">
+                    Add to Cart
+                </button>
+            </div>
 
-                        <div class="inline-box-image">
-                            <button>
-                                <a href="index.html">Home</a>
-                            </button>
+            <div class="product-card">
+                <img src="media/images/cake4.jpg" alt="Black Forest Cake">
+                <h3>Black Forest Cake</h3>
+                <p class="price">₹480</p>
+                <button class="btn add-to-cart"
+                    data-id="cake4"
+                    data-name="Black Forest Cake"
+                    data-price="480">
+                    Add to Cart
+                </button>
+            </div>
 
-                            <button>
-                                <a href="menu.html">Menu</a>
-                            </button>
+        </div>
+    </section>
 
-                            <button>
-                                <a href="about.html">About</a>
-                            </button>
+    <!-- Pastries -->
+    <section class="menu-section" id="pastries">
+        <h2>Pastries</h2>
 
-                            <button>
-                                <a href="cart.html">Cart</a>
-                            </button>
-                        </div>
+        <div class="product-grid">
 
-                    </div>  
-            </section>
-        </header>
-        <main>
-            <div class="container-main-body">
-                <section>
-                    <h1>Our Menu</h1>
-                    <h4>Handcrafted treats, made with Love. </h4>
-                </section>
-                <section>
-                    <div class="inline-box">
-                        
-                    </div>
-                </section>
-            </div>    
-        </main>
-    </body>
+            <div class="product-card">
+                <img src="media/images/pastry1.jpg" alt="Strawberry Pastry">
+                <h3>Strawberry Pastry</h3>
+                <p class="price">₹120</p>
+                <button class="btn add-to-cart"
+                    data-id="pastry1"
+                    data-name="Strawberry Pastry"
+                    data-price="120">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="media/images/pastry2.jpg" alt="Chocolate Pastry">
+                <h3>Chocolate Pastry</h3>
+                <p class="price">₹110</p>
+                <button class="btn add-to-cart"
+                    data-id="pastry2"
+                    data-name="Chocolate Pastry"
+                    data-price="110">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="media/images/pastry3.jpg" alt="Blueberry Pastry">
+                <h3>Blueberry Pastry</h3>
+                <p class="price">₹130</p>
+                <button class="btn add-to-cart"
+                    data-id="pastry3"
+                    data-name="Blueberry Pastry"
+                    data-price="130">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="media/images/pastry4.jpg" alt="Mango Pastry">
+                <h3>Mango Pastry</h3>
+                <p class="price">₹125</p>
+                <button class="btn add-to-cart"
+                    data-id="pastry4"
+                    data-name="Mango Pastry"
+                    data-price="125">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cookies -->
+    <section class="menu-section" id="cookies">
+        <h2>Cookies</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="media/images/cookie1.jpg" alt="Chocolate Chip Cookies">
+                <h3>Chocolate Chip Cookies</h3>
+                <p class="price">₹80</p>
+                <button class="btn add-to-cart"
+                    data-id="cookie1"
+                    data-name="Chocolate Chip Cookies"
+                    data-price="80">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="media/images/cookie2.jpg" alt="Butter Cookies">
+                <h3>Butter Cookies</h3>
+                <p class="price">₹70</p>
+                <button class="btn add-to-cart"
+                    data-id="cookie2"
+                    data-name="Butter Cookies"
+                    data-price="70">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section class="menu-section" id="desserts">
+        <h2>Desserts</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="media/images/muffin1.jpg" alt="Blueberry Muffin">
+                <h3>Blueberry Muffin</h3>
+                <p class="price">₹100</p>
+                <button class="btn add-to-cart"
+                    data-id="muffin1"
+                    data-name="Blueberry Muffin"
+                    data-price="100">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="media/images/dessert1.jpg" alt="Vanilla Cupcake">
+                <h3>Vanilla Cupcake</h3>
+                <p class="price">₹90</p>
+                <button class="btn add-to-cart"
+                    data-id="dessert1"
+                    data-name="Vanilla Cupcake"
+                    data-price="90">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">🧁 Sweet Bakery</div>
+        <p>Freshly baked with love. © 2026 Sweet Bakery.</p>
+    </footer>
+
+</body>
 </html>
