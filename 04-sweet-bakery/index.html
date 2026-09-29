@@ -1,197 +1,118 @@
-<html>
-    <head>
-        <title>Home Page</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <style>
-            h1 {
-                color: rgba(58, 3, 9, 0.934);
-            }
+    <title>Sweet Bakery | Freshly Baked, Always Loved</title>
 
-            h4 {
-                color: rgba(173, 85, 85, 0.671);
-            }
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
 
-            p {
-                color: rgb(87, 16, 21);
-            }
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="index.html" class="logo">🧁 Sweet Bakery</a>
 
-            .container-head-between {
-                display: flex;
-                justify-content: space-between;
-                width: 1300px;
-                border: 1px solid rgb(75, 20, 20);
-                background-color: rgb(231, 169, 179);
-            }
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="my-cart.html">My Cart 🛒</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-            .container-main-body {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 10px;
-                padding: 30px;
-                color: rgb(250, 210, 218);
-            }
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="welcome-text">Welcome to</p>
+            <h1>Sweet Bakery</h1>
+            <p>Freshly Baked. Always Loved.</p>
 
-            .inline-box-image {
-                display: inline;
-                background-color: rgb(231, 169, 179);
-                border: 1px solid rgb(75, 20, 20);
-                margin: 10px;
-                padding: 10px;
-            }
+            <a href="menu.html" class="btn">Explore Our Menu →</a>
+        </div>
 
-            /* Corrected CSS for the four boxes below */
-            .inline-box {
-                display: inline-block;
-                background-color: rgb(246, 169, 169);
-                border: 2px solid rgb(250, 210, 218);
-                margin: 10px;
-                padding: 10px;
-                width: 150px;
-                text-align: center;
-                vertical-align: top;
-            }
+        <div class="hero-image">
+            <img src="media/images/banner.jpg" alt="Freshly baked celebration cake">
+        </div>
+    </section>
 
-            button {
-                background-color: rgb(231, 169, 179);
-                border: 1px solid rgb(75, 20, 20);
-                padding: 8px 15px;
-                margin: 5px;
-            }
+    <!-- Bakery Specialties -->
+    <section class="specialties">
+        <h2>Our Specialties</h2>
+        <p class="section-subtitle">Made with love, just for you.</p>
 
-            button a {
-                color: rgb(75, 20, 20);
-                text-decoration: none;
-            }
+        <div class="specialty-grid">
+            <div class="specialty-card">
+                <span class="specialty-icon">🎂</span>
+                <h3>Fresh Cakes</h3>
+                <p>For every celebration</p>
+            </div>
 
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
+            <div class="specialty-card">
+                <span class="specialty-icon">🥐</span>
+                <h3>Pastries</h3>
+                <p>Flaky and delicious</p>
+            </div>
 
-            td {
-                padding: 30px;
-                vertical-align: middle;
-            }
+            <div class="specialty-card">
+                <span class="specialty-icon">🍪</span>
+                <h3>Cookies</h3>
+                <p>Baked with love</p>
+            </div>
 
-            .main-table {
-                border: 1px solid rgb(75, 20, 20);
-                background-color: rgb(244, 202, 209);
-            }
-        </style>
-    </head>
+            <div class="specialty-card">
+                <span class="specialty-icon">🧁</span>
+                <h3>Desserts</h3>
+                <p>Sweet little moments</p>
+            </div>
+        </div>
+    </section>
 
-    <body>
-            <header>
-                <section>
-                    <div class="container-head-between">
+    <!-- Featured Products -->
+    <section class="featured">
+        <h2>Featured Products</h2>
+        <p class="section-subtitle">A little sweetness goes a long way.</p>
 
-                        <div>
-                            <h4>🧁 Sweet Bakery</h4>
-                        </div>
+        <div class="product-grid">
 
-                        <div class="inline-box-image">
-                            <button>
-                                <a href="index.html">Home</a>
-                            </button>
+            <div class="product-card">
+                <img src="media/images/cake1.jpg" alt="Chocolate cake">
+                <h3>Chocolate Cake</h3>
+                <p class="price">₹450</p>
+                <a href="menu.html" class="btn">View Menu</a>
+            </div>
 
-                            <button>
-                                <a href="menu.html">Menu</a>
-                            </button>
+            <div class="product-card">
+                <img src="media/images/pastry1.jpg" alt="Strawberry pastry">
+                <h3>Strawberry Pastry</h3>
+                <p class="price">₹120</p>
+                <a href="menu.html" class="btn">View Menu</a>
+            </div>
 
-                            <button>
-                                <a href="about.html">About</a>
-                            </button>
+            <div class="product-card">
+                <img src="media/images/muffin1.jpg" alt="Blueberry muffin">
+                <h3>Blueberry Muffin</h3>
+                <p class="price">₹100</p>
+                <a href="menu.html" class="btn">View Menu</a>
+            </div>
 
-                            <button>
-                                <a href="cart.html">Cart</a>
-                            </button>
-                        </div>
+            <div class="product-card">
+                <img src="media/images/cake2.jpg" alt="Vanilla cupcake">
+                <h3>Vanilla Cupcake</h3>
+                <p class="price">₹90</p>
+                <a href="menu.html" class="btn">View Menu</a>
+            </div>
 
-                    </div>  
-                </section>
-            </header>
+        </div>
+    </section>
 
-            <main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">🧁 Sweet Bakery</div>
+        <p>Freshly baked with love. © 2026 Sweet Bakery.</p>
+    </footer>
 
-                <section>
-
-                    <table class="main-table">
-                        <tr>
-
-                            <td>
-                                <div class="container-main-body">
-
-                                    <h1>Freshly Baked</h1>
-                                    <h1>With Love 🩷</h1>
-
-                                    <p>Sweet treats for every moment</p>
-                                    <p>Made with love for your day.</p>
-
-                                    <button>
-                                        <a href="menu.html">Order Now ➡️</a>
-                                    </button>
-
-                                </div>
-                            </td>
-
-                            <td>
-                                <div>
-                                    <img
-                                        src="./media/cupcake.png"
-                                        alt="Cup Cake"
-                                        width="700px"
-                                    >
-                                </div>
-                            </td>
-
-                        </tr>
-                    </table>
-
-                </section>
-
-                <section>
-
-                    <div class="inline-box">
-                        🧁
-                        <br>
-                        <h4>Cupcake</h4>
-                        <br>
-                        Soft, Fluffy, and
-                        <br>
-                        full of flavors.
-                    </div>
-
-                    <div class="inline-box">
-                        🎂
-                        <br>
-                        <h4>Cakes</h4>
-                        <br>
-                        For birthdays
-                        <br>
-                        Celebration and more.
-                    </div>
-
-                    <div class="inline-box">
-                        🍪
-                        <br>
-                        <h4>Cookies</h4>
-                        <br>
-                        Crispy, chewy
-                        <br>
-                        and delicious.
-                    </div>
-
-                    <div class="inline-box">
-                        🧃
-                        <br>
-                        <h4>Beverages</h4>
-                        <br>
-                        Coffee, tea and refreshing drinks
-                    </div>
-
-                </section>
-
-            </main>    
-    </body>
+</body>
 </html>
