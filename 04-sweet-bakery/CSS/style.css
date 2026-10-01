@@ -543,3 +543,149 @@ footer {
         max-width: 330px;
     }
 }
+
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+.about-hero {
+    background-color: #f9e4e5;
+
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.about-hero-content {
+    max-width: 750px;
+}
+
+.about-hero-content h1 {
+    color: #5c3535;
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.about-hero-content > p:last-child {
+    color: #765858;
+
+    font-size: 17px;
+}
+
+
+/* ---------- Our Story ---------- */
+
+.about-story {
+    background-color: #fffaf7;
+
+    padding: 85px 7%;
+
+    text-align: center;
+}
+
+.story-content {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.story-content h2 {
+    color: #5c3535;
+
+    font-size: 36px;
+
+    margin-bottom: 25px;
+}
+
+.story-content p:not(.section-label) {
+    color: #765f5f;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ---------- Beliefs ---------- */
+
+.belief-section {
+    background-color: #fdf0ed;
+
+    padding: 80px 7%;
+
+    text-align: center;
+}
+
+.belief-section .section-heading {
+    margin-bottom: 40px;
+}
+
+
+/* ---------- Why Section ---------- */
+
+.why-section {
+    background-color: #fffaf7;
+
+    padding: 85px 7%;
+
+    text-align: center;
+}
+
+.why-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.why-content h2 {
+    color: #5c3535;
+
+    font-size: 36px;
+
+    margin-bottom: 30px;
+}
+
+.why-list {
+    max-width: 450px;
+
+    margin: auto;
+
+    text-align: left;
+}
+
+.why-list p {
+    color: #765f5f;
+
+    font-size: 16px;
+
+    padding: 7px 0;
+}
+
+
+/* ---------- About Responsive ---------- */
+
+@media (max-width: 600px) {
+
+    .about-hero-content h1 {
+        font-size: 38px;
+    }
+
+    .about-story,
+    .belief-section,
+    .why-section {
+        padding: 60px 20px;
+    }
+
+    .story-content h2,
+    .why-content h2 {
+        font-size: 29px;
+    }
+}
