@@ -1,118 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sweet Bakery | Freshly Baked, Always Loved</title>
+    <title>Sweet Bakery</title>
 
     <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <header class="navbar">
-        <a href="index.html" class="logo">🧁 Sweet Bakery</a>
+
+        <div class="logo">
+            Sweet Bakery 🧁
+        </div>
 
         <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="about.html">About</a>
-            <a href="my-cart.html">My Cart 🛒</a>
-            <a href="contact.html">Contact </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="my-cart.html">My Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
+
     </header>
+
 
     <!-- Hero Section -->
     <section class="hero">
+
         <div class="hero-content">
-            <p class="welcome-text">Welcome to</p>
-            <h1>Sweet Bakery</h1>
-            <p>Freshly Baked. Always Loved.</p>
 
-            <a href="menu.html" class="btn">Explore Our Menu →</a>
+            <div class="hero-text">
+
+                <p class="small-heading">
+                    WELCOME TO SWEET BAKERY
+                </p>
+
+                <h1>
+                    Sweet Moments,<br>
+                    Freshly Baked
+                </h1>
+
+                <p>
+                    Delicious cakes, pastries and sweet treats
+                    made with love for every special moment.
+                </p>
+
+                <a href="menu.html" class="btn">
+                    Explore Our Menu →
+                </a>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <img src="media/images/banner.jpg"
+                     alt="Sweet Bakery">
+
+            </div>
+
         </div>
 
-        <div class="hero-image">
-            <img src="media/images/banner.jpg" alt="Freshly baked celebration cake">
-        </div>
     </section>
 
-    <!-- Bakery Specialties -->
+
+    <!-- Specialties -->
     <section class="specialties">
-        <h2>Our Specialties</h2>
-        <p class="section-subtitle">Made with love, just for you.</p>
 
-        <div class="specialty-grid">
-            <div class="specialty-card">
-                <span class="specialty-icon">🎂</span>
-                <h3>Fresh Cakes</h3>
-                <p>For every celebration</p>
-            </div>
+        <div class="section-heading">
 
-            <div class="specialty-card">
-                <span class="specialty-icon">🥐</span>
-                <h3>Pastries</h3>
-                <p>Flaky and delicious</p>
-            </div>
+            <p class="section-label">
+                ✦ OUR SPECIALTIES ✦
+            </p>
 
-            <div class="specialty-card">
-                <span class="specialty-icon">🍪</span>
-                <h3>Cookies</h3>
-                <p>Baked with love</p>
-            </div>
+            <h2>
+                Something Sweet For Everyone
+            </h2>
 
-            <div class="specialty-card">
-                <span class="specialty-icon">🧁</span>
-                <h3>Desserts</h3>
-                <p>Sweet little moments</p>
-            </div>
         </div>
+
+
+        <div class="specialty-container">
+
+            <div class="specialty-card">
+
+                <div class="specialty-icon">
+                    🎂
+                </div>
+
+                <h3>
+                    Beautiful Cakes
+                </h3>
+
+                <p>
+                    Delicious cakes made for birthdays,
+                    celebrations and special moments.
+                </p>
+
+            </div>
+
+
+            <div class="specialty-card">
+
+                <div class="specialty-icon">
+                    🥐
+                </div>
+
+                <h3>
+                    Fresh Pastries
+                </h3>
+
+                <p>
+                    Soft, flaky and freshly baked pastries
+                    for your everyday cravings.
+                </p>
+
+            </div>
+
+
+            <div class="specialty-card">
+
+                <div class="specialty-icon">
+                    🍪
+                </div>
+
+                <h3>
+                    Sweet Cookies
+                </h3>
+
+                <p>
+                    Crispy, buttery cookies that are
+                    perfect with your favourite drink.
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
+
 
     <!-- Featured Products -->
     <section class="featured">
-        <h2>Featured Products</h2>
-        <p class="section-subtitle">A little sweetness goes a long way.</p>
 
-        <div class="product-grid">
+        <div class="section-heading">
 
+            <p class="section-label">
+                ✦ FEATURED ✦
+            </p>
+
+            <h2>
+                Our Favourite Treats
+            </h2>
+
+        </div>
+
+
+        <div class="product-container">
+
+
+            <!-- Chocolate Cake -->
             <div class="product-card">
-                <img src="media/images/cake1.jpg" alt="Chocolate cake">
-                <h3>Chocolate Cake</h3>
-                <p class="price">₹450</p>
-                <a href="menu.html" class="btn">View Menu</a>
+
+                <img src="media/images/cake1.jpg"
+                     alt="Chocolate Cake">
+
+                <div class="product-info">
+
+                    <h3>
+                        Chocolate Cake
+                    </h3>
+
+                    <p>
+                        ₹550
+                    </p>
+
+                </div>
+
             </div>
 
+
+            <!-- Chocolate Pastry -->
             <div class="product-card">
-                <img src="media/images/pastry1.jpg" alt="Strawberry pastry">
-                <h3>Strawberry Pastry</h3>
-                <p class="price">₹120</p>
-                <a href="menu.html" class="btn">View Menu</a>
+
+                <img src="media/images/pastry1.jpg"
+                     alt="Chocolate Pastry">
+
+                <div class="product-info">
+
+                    <h3>
+                        Chocolate Pastry
+                    </h3>
+
+                    <p>
+                        ₹120
+                    </p>
+
+                </div>
+
             </div>
 
+
+            <!-- Cupcake -->
             <div class="product-card">
-                <img src="media/images/muffin1.jpg" alt="Blueberry muffin">
-                <h3>Blueberry Muffin</h3>
-                <p class="price">₹100</p>
-                <a href="menu.html" class="btn">View Menu</a>
+
+                <img src="media/images/muffin1.jpg"
+                     alt="Vanilla Cupcake">
+
+                <div class="product-info">
+
+                    <h3>
+                        Vanilla Cupcake
+                    </h3>
+
+                    <p>
+                        ₹90
+                    </p>
+
+                </div>
+
             </div>
 
+
+            <!-- Strawberry Cake -->
             <div class="product-card">
-                <img src="media/images/cake2.jpg" alt="Vanilla cupcake">
-                <h3>Vanilla Cupcake</h3>
-                <p class="price">₹90</p>
-                <a href="menu.html" class="btn">View Menu</a>
+
+                <img src="media/images/cake2.jpg"
+                     alt="Strawberry Cake">
+
+                <div class="product-info">
+
+                    <h3>
+                        Strawberry Cake
+                    </h3>
+
+                    <p>
+                        ₹600
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
+
     </section>
 
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-logo">🧁 Sweet Bakery</div>
-        <p>Freshly baked with love. © 2026 Sweet Bakery.</p>
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                Sweet Bakery 🧁
+            </h3>
+
+            <p>
+                Freshly baked with love, served with happiness.
+            </p>
+
+            <div class="footer-line"></div>
+
+            <p class="copyright">
+                © 2026 Sweet Bakery. All Rights Reserved.
+            </p>
+
+        </div>
+
     </footer>
 
 </body>
+
 </html>
