@@ -1,6 +1,10 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
+/* =========================================
+   SWEET BAKERY
+   MAIN STYLE SHEET
+   ========================================= */
+
+
+/* ---------- GENERAL ---------- */
 
 * {
     margin: 0;
@@ -9,15 +13,18 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff9f5;
-    color: #4a2925;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #fffaf7;
+    color: #5c3b3b;
     line-height: 1.6;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+}
+
+ul {
+    list-style: none;
 }
 
 img {
@@ -25,301 +32,486 @@ img {
     display: block;
 }
 
-/* =========================
+
+/* =========================================
    NAVIGATION BAR
-========================= */
+   ========================================= */
 
 .navbar {
+    background-color: #fffaf7;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 5%;
-    background-color: #fffdfb;
-    border-bottom: 1px solid #f2d8d3;
-    gap: 20px;
+    padding: 22px 7%;
+    border-bottom: 1px solid #f1dcdc;
 }
 
 .logo {
-    font-family: Georgia, serif;
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: bold;
     font-style: italic;
-    font-weight: bold;
-    color: #8d302d;
-    white-space: nowrap;
+    color: #9b4f4f;
 }
 
-.navbar nav {
+.nav-links {
     display: flex;
-    align-items: center;
-    gap: 25px;
+    gap: 30px;
 }
 
-.navbar nav a {
-    font-size: 14px;
-    font-weight: bold;
-    transition: color 0.3s;
+.nav-links a {
+    color: #5c3b3b;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.navbar nav a:hover,
-.navbar nav a.active {
-    color: #c65360;
+.nav-links a:hover,
+.nav-links a.active {
+    color: #b45f5f;
 }
 
-/* =========================
-   BUTTONS
-========================= */
 
-.btn {
-    display: inline-block;
-    background-color: #d85d6b;
-    color: white;
-    padding: 11px 22px;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
+/* =========================================
+   HOME PAGE
+   ========================================= */
 
-.btn:hover {
-    background-color: #b94351;
-    transform: translateY(-2px);
-}
 
-/* =========================
-   HERO SECTION
-========================= */
+/* ---------- Home Hero ---------- */
 
 .hero {
+    min-height: 520px;
+
+    background-color: #f9e3e5;
+    background-size: cover;
+    background-position: center;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 40px;
-    padding: 65px 7%;
-    background-color: #fbe5df;
+    justify-content: center;
+
+    text-align: center;
+    padding: 60px 20px;
 }
 
 .hero-content {
-    flex: 1;
+    max-width: 750px;
 }
 
-.welcome-text {
-    font-size: 22px;
-    color: #633b32;
+.hero-content h1 {
+    font-size: 52px;
+    color: #5c3535;
+    margin-bottom: 18px;
 }
 
-.hero h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(38px, 5vw, 62px);
-    font-style: italic;
-    color: #8d302d;
-    line-height: 1.2;
-    margin: 5px 0 12px;
+.hero-content p {
+    font-size: 19px;
+    color: #765555;
+    margin-bottom: 28px;
 }
 
-.hero-content > p:not(.welcome-text) {
-    margin-bottom: 22px;
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-block;
+
+    background-color: #9b5b5b;
+    color: white;
+
+    padding: 12px 28px;
+
+    border-radius: 25px;
+
+    font-size: 15px;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
 }
 
-.hero-image {
-    flex: 1;
+.btn:hover {
+    background-color: #7f4646;
+    transform: translateY(-2px);
 }
 
-.hero-image img {
-    width: 100%;
-    max-width: 550px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 14px;
-}
 
-/* =========================
-   SECTION HEADINGS
-========================= */
+/* ---------- Specialties ---------- */
 
-.specialties,
-.featured {
-    padding: 55px 6%;
+.specialties {
+    background-color: #fffaf7;
+    padding: 80px 8%;
     text-align: center;
 }
 
-.specialties h2,
-.featured h2 {
-    font-family: Georgia, serif;
-    font-size: 30px;
-    color: #8d302d;
-    margin-bottom: 8px;
+.specialties h2 {
+    font-size: 36px;
+    color: #5c3535;
+    margin-bottom: 40px;
 }
 
-.section-subtitle {
-    color: #8c7068;
-    margin-bottom: 30px;
-}
-
-/* =========================
-   SPECIALTIES
-========================= */
-
-.specialty-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+.specialty-container {
+    display: flex;
+    justify-content: center;
     gap: 25px;
-    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .specialty-card {
-    padding: 20px 10px;
+    width: 250px;
+    background-color: #ffffff;
+
+    padding: 30px 22px;
+
+    border: 1px solid #f0dada;
     border-radius: 12px;
-    background-color: #fff0ea;
-    transition: transform 0.3s;
+
+    box-shadow: 0 5px 15px rgba(100, 60, 60, 0.07);
+
+    transition: transform 0.3s ease;
 }
 
 .specialty-card:hover {
-    transform: translateY(-5px);
-}
-
-.specialty-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 65px;
-    height: 65px;
-    background-color: #f9d8d1;
-    border-radius: 50%;
-    font-size: 30px;
-    margin-bottom: 12px;
+    transform: translateY(-6px);
 }
 
 .specialty-card h3 {
-    font-size: 17px;
-    margin-bottom: 5px;
+    color: #6b3e3e;
+    margin: 15px 0 10px;
 }
 
 .specialty-card p {
-    color: #8c7068;
-    font-size: 13px;
+    color: #6d5a5a;
+    font-size: 15px;
 }
 
-/* =========================
-   FEATURED PRODUCTS
-========================= */
+
+/* ---------- Featured Products ---------- */
 
 .featured {
-    background-color: #fffdfb;
+    background-color: #fdf0ed;
+    padding: 80px 8%;
+    text-align: center;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-    margin-top: 30px;
+.featured h2 {
+    font-size: 36px;
+    color: #5c3535;
+    margin-bottom: 40px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .product-card {
-    background-color: #fff8f3;
-    border: 1px solid #f3ded5;
+    width: 250px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f0dada;
     border-radius: 12px;
-    padding: 15px;
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(100, 60, 60, 0.08);
+
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(100, 50, 40, 0.1);
+    transform: translateY(-6px);
 }
 
 .product-card img {
     width: 100%;
-    height: 175px;
+    height: 190px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 12px;
+}
+
+.product-card-content {
+    padding: 20px;
 }
 
 .product-card h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.price {
-    color: #b94351;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-.product-card .btn {
-    font-size: 12px;
-    padding: 9px 15px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    background-color: #4a2925;
-    color: #fff4ec;
-    text-align: center;
-    padding: 25px 15px;
-}
-
-.footer-logo {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    font-style: italic;
+    color: #6b3e3e;
     margin-bottom: 8px;
 }
 
-.footer p {
-    font-size: 13px;
-    color: #e7cfc4;
+.product-card p {
+    color: #8a6262;
+    font-weight: bold;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
 
-@media (max-width: 900px) {
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+
+/* ---------- About Hero ---------- */
+
+.about-hero {
+    min-height: 360px;
+
+    background-color: #f9e3e5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.about-hero-content {
+    max-width: 750px;
+}
+
+.about-hero .small-heading {
+    color: #a45b5b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    color: #5c3535;
+    margin-bottom: 15px;
+}
+
+.about-hero p:last-child {
+    color: #765555;
+    font-size: 18px;
+}
+
+
+/* ---------- Story ---------- */
+
+.about-story {
+    background-color: #fffaf7;
+    padding: 90px 10%;
+    text-align: center;
+}
+
+.story-text {
+    max-width: 850px;
+    margin: auto;
+}
+
+.story-text h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #5c3535;
+}
+
+.story-text p:not(.section-label) {
+    color: #6d5a5a;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+
+/* ---------- Common Section Label ---------- */
+
+.section-label {
+    color: #b45f5f;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+/* ---------- Beliefs ---------- */
+
+.belief-section {
+    background-color: #fdf0ed;
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    color: #5c3535;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    color: #765f5f;
+}
+
+.belief-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.belief-card {
+    background-color: #ffffff;
+
+    width: 270px;
+    min-height: 230px;
+
+    padding: 30px 25px;
+
+    border: 1px solid #f0dada;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(100, 60, 60, 0.08);
+
+    transition: transform 0.3s ease;
+}
+
+.belief-card:hover {
+    transform: translateY(-6px);
+}
+
+.belief-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.belief-card h3 {
+    color: #6b3e3e;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.belief-card p {
+    color: #6d5a5a;
+    font-size: 15px;
+}
+
+
+/* ---------- Why Choose Us ---------- */
+
+.why-section {
+    background-color: #fffaf7;
+    padding: 90px 10%;
+    text-align: center;
+}
+
+.why-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.why-content h2 {
+    font-size: 36px;
+    color: #5c3535;
+    margin-bottom: 35px;
+}
+
+.why-list {
+    max-width: 450px;
+    margin: auto;
+    text-align: left;
+}
+
+.why-list p {
+    color: #665555;
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background-color: #6b4545;
+    color: #fff8f5;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+.footer-content h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.footer-content p {
+    font-size: 14px;
+}
+
+.footer-content .copyright {
+    margin-top: 15px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
     .navbar {
         flex-direction: column;
+        gap: 18px;
+        padding: 20px;
     }
 
-    .navbar nav {
-        justify-content: center;
-        flex-wrap: wrap;
+    .nav-links {
         gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
     }
 
     .hero {
-        padding: 45px 5%;
-        gap: 25px;
+        min-height: 420px;
     }
 
-    .specialty-grid,
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 600px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
+    .hero-content h1 {
+        font-size: 38px;
     }
 
-    .hero-image img {
-        height: 230px;
+    .about-hero {
+        min-height: 300px;
     }
 
-    .specialty-grid,
-    .product-grid {
-        grid-template-columns: 1fr;
+    .about-hero h1 {
+        font-size: 36px;
     }
 
     .specialties,
-    .featured {
-        padding: 40px 6%;
+    .featured,
+    .about-story,
+    .belief-section,
+    .why-section {
+        padding: 60px 20px;
+    }
+
+    .specialties h2,
+    .featured h2,
+    .story-text h2,
+    .section-heading h2,
+    .why-content h2 {
+        font-size: 29px;
+    }
+
+    .specialty-card,
+    .product-card,
+    .belief-card {
+        width: 100%;
+        max-width: 320px;
     }
 }
