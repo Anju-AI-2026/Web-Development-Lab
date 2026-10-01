@@ -1,229 +1,571 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Menu | Sweet Bakery</title>
+    <title>Menu - Sweet Bakery</title>
 
     <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <header class="navbar">
-        <a href="index.html" class="logo">🧁 Sweet Bakery</a>
+
+        <div class="logo">
+            Sweet Bakery 🧁
+        </div>
 
         <nav>
-            <a href="index.html">Home</a>
-            <a href="menu.html" class="active">Menu</a>
-            <a href="about.html">About</a>
-            <a href="my-cart.html">My Cart 🛒</a>
-            <a href="contact.html">Contact</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="my-cart.html">My Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
+
     </header>
 
-    <!-- Menu Heading -->
-    <section class="menu-heading">
-        <h1>Our Menu</h1>
-        <p>A delicious selection of cakes, pastries, cookies, and more!</p>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+
+        <div class="menu-hero-content">
+
+            <p class="small-heading">
+                ✦ OUR MENU ✦
+            </p>
+
+            <h1>
+                Something Sweet<br>
+                For Every Craving
+            </h1>
+
+            <p>
+                Explore our freshly baked cakes, pastries,
+                cookies and delightful treats.
+            </p>
+
+        </div>
+
     </section>
 
-    <!-- Category Navigation -->
-    <section class="menu-categories">
-        <a href="#all-products">All</a>
-        <a href="#cakes">Cakes</a>
-        <a href="#pastries">Pastries</a>
-        <a href="#cookies">Cookies</a>
-        <a href="#desserts">Desserts</a>
-    </section>
 
     <!-- Cakes -->
-    <section class="menu-section" id="cakes">
-        <h2>Cakes</h2>
+    <section class="menu-section">
 
-        <div class="product-grid">
+        <div class="section-heading">
 
-            <div class="product-card">
-                <img src="media/images/cake1.jpg" alt="Chocolate Cake">
-                <h3>Chocolate Cake</h3>
-                <p class="price">₹450</p>
-                <button class="btn add-to-cart"
-                    data-id="cake1"
-                    data-name="Chocolate Cake"
-                    data-price="450">
-                    Add to Cart
-                </button>
+            <p class="section-label">
+                ✦ CAKES ✦
+            </p>
+
+            <h2>
+                Delicious Cakes
+            </h2>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+            <!-- Cake 1 -->
+            <div class="menu-card">
+
+                <img src="media/images/cake1.jpg"
+                     alt="Chocolate Cake">
+
+                <div class="menu-card-info">
+
+                    <h3>Chocolate Cake</h3>
+
+                    <p>
+                        Rich chocolate cake with a
+                        smooth creamy topping.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹550</span>
+
+                        <button class="add-cart"
+                                data-id="cake1"
+                                data-name="Chocolate Cake"
+                                data-price="550">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/cake2.jpg" alt="Strawberry Cake">
-                <h3>Strawberry Cake</h3>
-                <p class="price">₹500</p>
-                <button class="btn add-to-cart"
-                    data-id="cake2"
-                    data-name="Strawberry Cake"
-                    data-price="500">
-                    Add to Cart
-                </button>
+
+            <!-- Cake 2 -->
+            <div class="menu-card">
+
+                <img src="media/images/cake2.jpg"
+                     alt="Strawberry Cake">
+
+                <div class="menu-card-info">
+
+                    <h3>Strawberry Cake</h3>
+
+                    <p>
+                        Soft vanilla cake layered with
+                        fresh strawberry cream.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹600</span>
+
+                        <button class="add-cart"
+                                data-id="cake2"
+                                data-name="Strawberry Cake"
+                                data-price="600">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/cake3.jpg" alt="Vanilla Cake">
-                <h3>Vanilla Cake</h3>
-                <p class="price">₹400</p>
-                <button class="btn add-to-cart"
-                    data-id="cake3"
-                    data-name="Vanilla Cake"
-                    data-price="400">
-                    Add to Cart
-                </button>
+
+            <!-- Cake 3 -->
+            <div class="menu-card">
+
+                <img src="media/images/cake3.jpg"
+                     alt="Black Forest Cake">
+
+                <div class="menu-card-info">
+
+                    <h3>Black Forest Cake</h3>
+
+                    <p>
+                        Chocolate cake with cream and
+                        delicious cherry filling.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹650</span>
+
+                        <button class="add-cart"
+                                data-id="cake3"
+                                data-name="Black Forest Cake"
+                                data-price="650">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/cake4.jpg" alt="Black Forest Cake">
-                <h3>Black Forest Cake</h3>
-                <p class="price">₹480</p>
-                <button class="btn add-to-cart"
-                    data-id="cake4"
-                    data-name="Black Forest Cake"
-                    data-price="480">
-                    Add to Cart
-                </button>
+
+            <!-- Cake 4 -->
+            <div class="menu-card">
+
+                <img src="media/images/cake4.jpg"
+                     alt="Vanilla Cake">
+
+                <div class="menu-card-info">
+
+                    <h3>Vanilla Cake</h3>
+
+                    <p>
+                        Light and fluffy vanilla cake
+                        with creamy frosting.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹500</span>
+
+                        <button class="add-cart"
+                                data-id="cake4"
+                                data-name="Vanilla Cake"
+                                data-price="500">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
+
     </section>
+
 
     <!-- Pastries -->
-    <section class="menu-section" id="pastries">
-        <h2>Pastries</h2>
+    <section class="menu-section alternate-section">
 
-        <div class="product-grid">
+        <div class="section-heading">
 
-            <div class="product-card">
-                <img src="media/images/pastry1.jpg" alt="Strawberry Pastry">
-                <h3>Strawberry Pastry</h3>
-                <p class="price">₹120</p>
-                <button class="btn add-to-cart"
-                    data-id="pastry1"
-                    data-name="Strawberry Pastry"
-                    data-price="120">
-                    Add to Cart
-                </button>
+            <p class="section-label">
+                ✦ PASTRIES ✦
+            </p>
+
+            <h2>
+                Freshly Baked Pastries
+            </h2>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+            <!-- Pastry 1 -->
+            <div class="menu-card">
+
+                <img src="media/images/pastry1.jpg"
+                     alt="Chocolate Pastry">
+
+                <div class="menu-card-info">
+
+                    <h3>Chocolate Pastry</h3>
+
+                    <p>
+                        Soft chocolate pastry topped
+                        with creamy chocolate frosting.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹120</span>
+
+                        <button class="add-cart"
+                                data-id="pastry1"
+                                data-name="Chocolate Pastry"
+                                data-price="120">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/pastry2.jpg" alt="Chocolate Pastry">
-                <h3>Chocolate Pastry</h3>
-                <p class="price">₹110</p>
-                <button class="btn add-to-cart"
-                    data-id="pastry2"
-                    data-name="Chocolate Pastry"
-                    data-price="110">
-                    Add to Cart
-                </button>
+
+            <!-- Pastry 2 -->
+            <div class="menu-card">
+
+                <img src="media/images/pastry2.jpg"
+                     alt="Cream Pastry">
+
+                <div class="menu-card-info">
+
+                    <h3>Cream Pastry</h3>
+
+                    <p>
+                        Soft pastry filled with smooth
+                        and delicious cream.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹110</span>
+
+                        <button class="add-cart"
+                                data-id="pastry2"
+                                data-name="Cream Pastry"
+                                data-price="110">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/pastry3.jpg" alt="Blueberry Pastry">
-                <h3>Blueberry Pastry</h3>
-                <p class="price">₹130</p>
-                <button class="btn add-to-cart"
-                    data-id="pastry3"
-                    data-name="Blueberry Pastry"
-                    data-price="130">
-                    Add to Cart
-                </button>
+
+            <!-- Pastry 3 -->
+            <div class="menu-card">
+
+                <img src="media/images/pastry3.jpg"
+                     alt="Strawberry Pastry">
+
+                <div class="menu-card-info">
+
+                    <h3>Strawberry Pastry</h3>
+
+                    <p>
+                        Fresh strawberry flavour with
+                        a soft creamy topping.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹130</span>
+
+                        <button class="add-cart"
+                                data-id="pastry3"
+                                data-name="Strawberry Pastry"
+                                data-price="130">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/pastry4.jpg" alt="Mango Pastry">
-                <h3>Mango Pastry</h3>
-                <p class="price">₹125</p>
-                <button class="btn add-to-cart"
-                    data-id="pastry4"
-                    data-name="Mango Pastry"
-                    data-price="125">
-                    Add to Cart
-                </button>
+
+            <!-- Pastry 4 -->
+            <div class="menu-card">
+
+                <img src="media/images/pastry4.jpg"
+                     alt="Croissant">
+
+                <div class="menu-card-info">
+
+                    <h3>Butter Croissant</h3>
+
+                    <p>
+                        Golden, flaky and buttery pastry
+                        baked fresh for you.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹100</span>
+
+                        <button class="add-cart"
+                                data-id="pastry4"
+                                data-name="Butter Croissant"
+                                data-price="100">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
+
     </section>
+
 
     <!-- Cookies -->
-    <section class="menu-section" id="cookies">
-        <h2>Cookies</h2>
+    <section class="menu-section">
 
-        <div class="product-grid">
+        <div class="section-heading">
 
-            <div class="product-card">
-                <img src="media/images/cookie1.jpg" alt="Chocolate Chip Cookies">
-                <h3>Chocolate Chip Cookies</h3>
-                <p class="price">₹80</p>
-                <button class="btn add-to-cart"
-                    data-id="cookie1"
-                    data-name="Chocolate Chip Cookies"
-                    data-price="80">
-                    Add to Cart
-                </button>
+            <p class="section-label">
+                ✦ COOKIES ✦
+            </p>
+
+            <h2>
+                Homemade Cookies
+            </h2>
+
+        </div>
+
+
+        <div class="menu-grid small-grid">
+
+            <!-- Cookie 1 -->
+            <div class="menu-card">
+
+                <img src="media/images/cookie1.jpg"
+                     alt="Chocolate Chip Cookies">
+
+                <div class="menu-card-info">
+
+                    <h3>Chocolate Chip Cookies</h3>
+
+                    <p>
+                        Crispy outside, soft inside and
+                        packed with chocolate chips.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹80</span>
+
+                        <button class="add-cart"
+                                data-id="cookie1"
+                                data-name="Chocolate Chip Cookies"
+                                data-price="80">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/cookie2.jpg" alt="Butter Cookies">
-                <h3>Butter Cookies</h3>
-                <p class="price">₹70</p>
-                <button class="btn add-to-cart"
-                    data-id="cookie2"
-                    data-name="Butter Cookies"
-                    data-price="70">
-                    Add to Cart
-                </button>
+
+            <!-- Cookie 2 -->
+            <div class="menu-card">
+
+                <img src="media/images/cookie2.jpg"
+                     alt="Butter Cookies">
+
+                <div class="menu-card-info">
+
+                    <h3>Butter Cookies</h3>
+
+                    <p>
+                        Light, buttery and perfectly baked
+                        for a sweet little treat.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹70</span>
+
+                        <button class="add-cart"
+                                data-id="cookie2"
+                                data-name="Butter Cookies"
+                                data-price="70">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
+
     </section>
 
-    <!-- Desserts -->
-    <section class="menu-section" id="desserts">
-        <h2>Desserts</h2>
 
-        <div class="product-grid">
+    <!-- Muffins & Desserts -->
+    <section class="menu-section alternate-section">
 
-            <div class="product-card">
-                <img src="media/images/muffin1.jpg" alt="Blueberry Muffin">
-                <h3>Blueberry Muffin</h3>
-                <p class="price">₹100</p>
-                <button class="btn add-to-cart"
-                    data-id="muffin1"
-                    data-name="Blueberry Muffin"
-                    data-price="100">
-                    Add to Cart
-                </button>
+        <div class="section-heading">
+
+            <p class="section-label">
+                ✦ SWEET TREATS ✦
+            </p>
+
+            <h2>
+                Muffins & Desserts
+            </h2>
+
+        </div>
+
+
+        <div class="menu-grid small-grid">
+
+            <!-- Muffin -->
+            <div class="menu-card">
+
+                <img src="media/images/muffin1.jpg"
+                     alt="Vanilla Cupcake">
+
+                <div class="menu-card-info">
+
+                    <h3>Vanilla Cupcake</h3>
+
+                    <p>
+                        Soft vanilla cupcake topped
+                        with creamy frosting.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹90</span>
+
+                        <button class="add-cart"
+                                data-id="muffin1"
+                                data-name="Vanilla Cupcake"
+                                data-price="90">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img src="media/images/dessert1.jpg" alt="Vanilla Cupcake">
-                <h3>Vanilla Cupcake</h3>
-                <p class="price">₹90</p>
-                <button class="btn add-to-cart"
-                    data-id="dessert1"
-                    data-name="Vanilla Cupcake"
-                    data-price="90">
-                    Add to Cart
-                </button>
+
+            <!-- Dessert -->
+            <div class="menu-card">
+
+                <img src="media/images/dessert1.jpg"
+                     alt="Sweet Dessert">
+
+                <div class="menu-card-info">
+
+                    <h3>Special Dessert</h3>
+
+                    <p>
+                        A delightful sweet treat made
+                        for dessert lovers.
+                    </p>
+
+                    <div class="menu-bottom">
+
+                        <span class="price">₹150</span>
+
+                        <button class="add-cart"
+                                data-id="dessert1"
+                                data-name="Special Dessert"
+                                data-price="150">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
+
     </section>
+
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-logo">🧁 Sweet Bakery</div>
-        <p>Freshly baked with love. © 2026 Sweet Bakery.</p>
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                Sweet Bakery 🧁
+            </h3>
+
+            <p>
+                Freshly baked with love, served with happiness.
+            </p>
+
+            <div class="footer-line"></div>
+
+            <p class="copyright">
+                © 2026 Sweet Bakery. All Rights Reserved.
+            </p>
+
+        </div>
+
     </footer>
 
+
+    <script src="JS/script.js"></script>
+
 </body>
+
 </html>
