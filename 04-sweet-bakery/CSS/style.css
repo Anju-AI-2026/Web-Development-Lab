@@ -4,7 +4,7 @@
    ========================================= */
 
 
-/* ---------- GENERAL ---------- */
+/* ---------- RESET ---------- */
 
 * {
     margin: 0;
@@ -12,20 +12,14 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Georgia, "Times New Roman", serif;
     background-color: #fffaf7;
-    color: #5c3b3b;
+    color: #5a3b3b;
     line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
 
 img {
     max-width: 100%;
@@ -33,395 +27,387 @@ img {
 }
 
 
+a {
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
 /* =========================================
-   NAVIGATION BAR
+   NAVIGATION
    ========================================= */
 
 .navbar {
-    background-color: #fffaf7;
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 22px 7%;
-    border-bottom: 1px solid #f1dcdc;
+
+    padding: 20px 7%;
+
+    background-color: #fffaf7;
+
+    border-bottom: 1px solid #f1dddd;
 }
 
+
 .logo {
-    font-size: 28px;
+    font-size: 27px;
     font-weight: bold;
     font-style: italic;
-    color: #9b4f4f;
+
+    color: #8f4f4f;
 }
+
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 28px;
 }
 
+
 .nav-links a {
-    color: #5c3b3b;
-    font-size: 16px;
+    position: relative;
+
+    color: #624747;
+
+    font-size: 15px;
+
+    padding-bottom: 5px;
+
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
+
+.nav-links a:hover {
+    color: #bd6868;
+}
+
+
 .nav-links a.active {
-    color: #b45f5f;
+    color: #bd6868;
+}
+
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background-color: #bd6868;
 }
 
 
 /* =========================================
-   HOME PAGE
+   HERO
    ========================================= */
 
-
-/* ---------- Home Hero ---------- */
-
 .hero {
-    min-height: 520px;
+    background-color: #f9e4e5;
 
-    background-color: #f9e3e5;
-    background-size: cover;
-    background-position: center;
+    padding: 65px 7% 75px;
+}
+
+
+.hero-content {
+    max-width: 1200px;
+
+    margin: auto;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
-    text-align: center;
-    padding: 60px 20px;
+    gap: 60px;
 }
 
-.hero-content {
-    max-width: 750px;
+
+.hero-text {
+    flex: 1;
+
+    max-width: 540px;
 }
 
-.hero-content h1 {
-    font-size: 52px;
+
+.small-heading {
+    color: #b45f5f;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 14px;
+}
+
+
+.hero-text h1 {
     color: #5c3535;
-    margin-bottom: 18px;
+
+    font-size: 54px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
 }
 
-.hero-content p {
-    font-size: 19px;
-    color: #765555;
+
+.hero-text > p:not(.small-heading) {
+    color: #765858;
+
+    font-size: 17px;
+
+    max-width: 500px;
+
     margin-bottom: 28px;
 }
 
 
-/* ---------- Buttons ---------- */
+/* ---------- Button ---------- */
 
 .btn {
     display: inline-block;
 
-    background-color: #9b5b5b;
+    background-color: #bd6868;
+
     color: white;
 
-    padding: 12px 28px;
+    padding: 12px 25px;
 
     border-radius: 25px;
 
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
 
     transition: background-color 0.3s ease,
                 transform 0.3s ease;
 }
 
+
 .btn:hover {
-    background-color: #7f4646;
+    background-color: #9e5050;
+
     transform: translateY(-2px);
 }
 
 
-/* ---------- Specialties ---------- */
+/* ---------- Hero Image ---------- */
 
-.specialties {
-    background-color: #fffaf7;
-    padding: 80px 8%;
-    text-align: center;
-}
+.hero-image {
+    flex: 1;
 
-.specialties h2 {
-    font-size: 36px;
-    color: #5c3535;
-    margin-bottom: 40px;
-}
-
-.specialty-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.specialty-card {
-    width: 250px;
-    background-color: #ffffff;
-
-    padding: 30px 22px;
-
-    border: 1px solid #f0dada;
-    border-radius: 12px;
-
-    box-shadow: 0 5px 15px rgba(100, 60, 60, 0.07);
-
-    transition: transform 0.3s ease;
-}
-
-.specialty-card:hover {
-    transform: translateY(-6px);
-}
-
-.specialty-card h3 {
-    color: #6b3e3e;
-    margin: 15px 0 10px;
-}
-
-.specialty-card p {
-    color: #6d5a5a;
-    font-size: 15px;
+    max-width: 500px;
 }
 
 
-/* ---------- Featured Products ---------- */
-
-.featured {
-    background-color: #fdf0ed;
-    padding: 80px 8%;
-    text-align: center;
-}
-
-.featured h2 {
-    font-size: 36px;
-    color: #5c3535;
-    margin-bottom: 40px;
-}
-
-.product-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.product-card {
-    width: 250px;
-
-    background-color: #ffffff;
-
-    border: 1px solid #f0dada;
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow: 0 5px 15px rgba(100, 60, 60, 0.08);
-
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-6px);
-}
-
-.product-card img {
+.hero-image img {
     width: 100%;
-    height: 190px;
+
+    height: 360px;
+
     object-fit: cover;
-}
 
-.product-card-content {
-    padding: 20px;
-}
+    border-radius: 18px;
 
-.product-card h3 {
-    color: #6b3e3e;
-    margin-bottom: 8px;
-}
-
-.product-card p {
-    color: #8a6262;
-    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(100, 60, 60, 0.12);
 }
 
 
 /* =========================================
-   ABOUT PAGE
+   COMMON SECTION HEADING
    ========================================= */
 
+.section-heading {
+    text-align: center;
 
-/* ---------- About Hero ---------- */
+    max-width: 700px;
 
-.about-hero {
-    min-height: 360px;
+    margin: 0 auto 42px;
+}
 
-    background-color: #f9e3e5;
 
+.section-label {
+    color: #bd6868;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.section-heading h2 {
+    color: #5c3535;
+
+    font-size: 34px;
+}
+
+
+/* =========================================
+   SPECIALTIES
+   ========================================= */
+
+.specialties {
+    background-color: #fffaf7;
+
+    padding: 80px 7%;
+}
+
+
+.specialty-container {
     display: flex;
+
     justify-content: center;
-    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.specialty-card {
+    width: 280px;
+
+    padding: 30px 25px;
 
     text-align: center;
 
-    padding: 60px 20px;
+    background-color: #fff;
+
+    border: 1px solid #f0dada;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(100, 60, 60, 0.07);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-.about-hero-content {
-    max-width: 750px;
+
+.specialty-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px rgba(100, 60, 60, 0.11);
 }
 
-.about-hero .small-heading {
-    color: #a45b5b;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-}
 
-.about-hero h1 {
-    font-size: 48px;
-    color: #5c3535;
+.specialty-icon {
+    font-size: 38px;
+
     margin-bottom: 15px;
 }
 
-.about-hero p:last-child {
-    color: #765555;
-    font-size: 18px;
-}
 
+.specialty-card h3 {
+    color: #674040;
 
-/* ---------- Story ---------- */
+    font-size: 20px;
 
-.about-story {
-    background-color: #fffaf7;
-    padding: 90px 10%;
-    text-align: center;
-}
-
-.story-text {
-    max-width: 850px;
-    margin: auto;
-}
-
-.story-text h2 {
-    font-size: 36px;
-    margin-bottom: 25px;
-    color: #5c3535;
-}
-
-.story-text p:not(.section-label) {
-    color: #6d5a5a;
-    font-size: 16px;
-    margin-bottom: 16px;
-}
-
-
-/* ---------- Common Section Label ---------- */
-
-.section-label {
-    color: #b45f5f;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
 
-/* ---------- Beliefs ---------- */
-
-.belief-section {
-    background-color: #fdf0ed;
-    padding: 80px 8%;
-    text-align: center;
-}
-
-.section-heading {
-    max-width: 700px;
-    margin: 0 auto 45px;
-}
-
-.section-heading h2 {
-    font-size: 36px;
-    color: #5c3535;
-    margin-bottom: 12px;
-}
-
-.section-heading > p:last-child {
+.specialty-card p {
     color: #765f5f;
+
+    font-size: 14px;
 }
 
-.belief-cards {
+
+/* =========================================
+   FEATURED PRODUCTS
+   ========================================= */
+
+.featured {
+    background-color: #fdf0ed;
+
+    padding: 80px 7%;
+}
+
+
+.product-container {
     display: flex;
+
     justify-content: center;
-    gap: 25px;
+
+    gap: 22px;
+
     flex-wrap: wrap;
 }
 
-.belief-card {
-    background-color: #ffffff;
 
-    width: 270px;
-    min-height: 230px;
+.product-card {
+    width: 260px;
 
-    padding: 30px 25px;
+    background-color: #fff;
 
     border: 1px solid #f0dada;
-    border-radius: 12px;
 
-    box-shadow: 0 5px 15px rgba(100, 60, 60, 0.08);
+    border-radius: 14px;
 
-    transition: transform 0.3s ease;
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(100, 60, 60, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-.belief-card:hover {
+
+.product-card:hover {
     transform: translateY(-6px);
-}
 
-.belief-icon {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-.belief-card h3 {
-    color: #6b3e3e;
-    font-size: 21px;
-    margin-bottom: 12px;
-}
-
-.belief-card p {
-    color: #6d5a5a;
-    font-size: 15px;
+    box-shadow: 0 10px 25px rgba(100, 60, 60, 0.12);
 }
 
 
-/* ---------- Why Choose Us ---------- */
+.product-card img {
+    width: 100%;
 
-.why-section {
-    background-color: #fffaf7;
-    padding: 90px 10%;
+    height: 205px;
+
+    object-fit: cover;
+}
+
+
+.product-info {
+    padding: 17px 18px 20px;
+
     text-align: center;
 }
 
-.why-content {
-    max-width: 750px;
-    margin: auto;
+
+.product-info h3 {
+    color: #674040;
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
 }
 
-.why-content h2 {
-    font-size: 36px;
-    color: #5c3535;
-    margin-bottom: 35px;
-}
 
-.why-list {
-    max-width: 450px;
-    margin: auto;
-    text-align: left;
-}
+.product-info p {
+    color: #bd6868;
 
-.why-list p {
-    color: #665555;
-    font-size: 16px;
-    padding: 8px 0;
+    font-size: 15px;
+
+    font-weight: bold;
 }
 
 
@@ -430,27 +416,45 @@ img {
    ========================================= */
 
 footer {
-    background-color: #6b4545;
-    color: #fff8f5;
+    background-color: #704747;
+
+    color: #fff7f3;
+
+    padding: 32px 20px;
 
     text-align: center;
-
-    padding: 35px 20px;
 }
+
 
 .footer-content h3 {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 23px;
+
+    margin-bottom: 6px;
 }
 
-.footer-content p {
-    font-size: 14px;
+
+.footer-content > p {
+    font-size: 13px;
+
+    opacity: 0.9;
 }
+
+
+.footer-line {
+    width: 45px;
+
+    height: 1px;
+
+    background-color: #d9aaaa;
+
+    margin: 18px auto;
+}
+
 
 .footer-content .copyright {
-    margin-top: 15px;
-    font-size: 13px;
-    opacity: 0.8;
+    font-size: 12px;
+
+    opacity: 0.7;
 }
 
 
@@ -458,60 +462,84 @@ footer {
    RESPONSIVE DESIGN
    ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
 
     .navbar {
         flex-direction: column;
+
         gap: 18px;
+
         padding: 20px;
     }
 
+
     .nav-links {
-        gap: 15px;
+        gap: 18px;
+
         flex-wrap: wrap;
+
         justify-content: center;
     }
 
-    .nav-links a {
-        font-size: 14px;
+
+    .hero-content {
+        flex-direction: column;
+
+        text-align: center;
     }
+
+
+    .hero-text {
+        max-width: 650px;
+    }
+
+
+    .hero-text > p:not(.small-heading) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-image {
+        width: 100%;
+
+        max-width: 600px;
+    }
+}
+
+
+@media (max-width: 600px) {
 
     .hero {
-        min-height: 420px;
+        padding: 50px 20px;
     }
 
-    .hero-content h1 {
-        font-size: 38px;
+
+    .hero-text h1 {
+        font-size: 40px;
     }
 
-    .about-hero {
-        min-height: 300px;
+
+    .hero-image img {
+        height: 280px;
     }
 
-    .about-hero h1 {
-        font-size: 36px;
-    }
 
     .specialties,
-    .featured,
-    .about-story,
-    .belief-section,
-    .why-section {
+    .featured {
         padding: 60px 20px;
     }
 
-    .specialties h2,
-    .featured h2,
-    .story-text h2,
-    .section-heading h2,
-    .why-content h2 {
-        font-size: 29px;
+
+    .section-heading h2 {
+        font-size: 28px;
     }
 
+
     .specialty-card,
-    .product-card,
-    .belief-card {
+    .product-card {
         width: 100%;
-        max-width: 320px;
+
+        max-width: 330px;
     }
 }
