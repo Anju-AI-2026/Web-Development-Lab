@@ -689,3 +689,220 @@ footer {
         font-size: 29px;
     }
 }
+
+/* =========================================
+   MENU PAGE
+   ========================================= */
+
+.menu-hero {
+    background-color: #f9e4e5;
+
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+.menu-hero-content {
+    max-width: 750px;
+}
+
+
+.menu-hero-content h1 {
+    color: #5c3535;
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+
+.menu-hero-content > p:last-child {
+    color: #765858;
+
+    font-size: 17px;
+}
+
+
+/* ---------- Menu Sections ---------- */
+
+.menu-section {
+    background-color: #fffaf7;
+
+    padding: 80px 7%;
+}
+
+
+.menu-section-alt {
+    background-color: #fdf0ed;
+}
+
+
+/* ---------- Product Grid ---------- */
+
+.menu-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ---------- Product Card ---------- */
+
+.menu-card {
+    background-color: #fff;
+
+    border: 1px solid #f0dada;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(100, 60, 60, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.menu-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px rgba(100, 60, 60, 0.12);
+}
+
+
+.menu-card > img {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+}
+
+
+.menu-card-info {
+    padding: 18px;
+}
+
+
+.menu-card-info h3 {
+    color: #674040;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+
+.menu-card-info > p {
+    color: #765f5f;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    min-height: 60px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ---------- Price + Button ---------- */
+
+.menu-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.price {
+    color: #bd6868;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+.cart-btn {
+    border: none;
+
+    background-color: #bd6868;
+
+    color: white;
+
+    padding: 9px 13px;
+
+    border-radius: 20px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+
+.cart-btn:hover {
+    background-color: #9e5050;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Menu Responsive ---------- */
+
+@media (max-width: 1050px) {
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .menu-hero-content h1 {
+        font-size: 38px;
+    }
+
+
+    .menu-section {
+        padding: 60px 20px;
+    }
+
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .menu-card > img {
+        height: 230px;
+    }
+
+}
