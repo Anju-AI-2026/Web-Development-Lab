@@ -697,7 +697,7 @@ footer {
 .menu-hero {
     background-color: #f9e4e5;
 
-    min-height: 330px;
+    min-height: 300px;
 
     display: flex;
     align-items: center;
@@ -705,28 +705,28 @@ footer {
 
     text-align: center;
 
-    padding: 60px 20px;
+    padding: 55px 20px;
 }
 
 
 .menu-hero-content {
-    max-width: 750px;
+    max-width: 700px;
 }
 
 
 .menu-hero-content h1 {
     color: #5c3535;
 
-    font-size: 50px;
+    font-size: 46px;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 
 .menu-hero-content > p:last-child {
     color: #765858;
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
 
@@ -735,7 +735,7 @@ footer {
 .menu-section {
     background-color: #fffaf7;
 
-    padding: 80px 7%;
+    padding: 65px 5%;
 }
 
 
@@ -755,22 +755,22 @@ footer {
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 25px;
+    gap: 28px;
 }
 
 
 /* ---------- Product Card ---------- */
 
 .menu-card {
-    background-color: #fff;
+    background-color: #ffffff;
 
     border: 1px solid #f0dada;
 
-    border-radius: 14px;
+    border-radius: 15px;
 
     overflow: hidden;
 
-    box-shadow: 0 5px 18px rgba(100, 60, 60, 0.08);
+    box-shadow: 0 5px 16px rgba(100, 60, 60, 0.08);
 
     transition: transform 0.3s ease,
                 box-shadow 0.3s ease;
@@ -780,30 +780,36 @@ footer {
 .menu-card:hover {
     transform: translateY(-6px);
 
-    box-shadow: 0 10px 25px rgba(100, 60, 60, 0.12);
+    box-shadow: 0 10px 24px rgba(100, 60, 60, 0.13);
 }
 
+
+/* ---------- Product Image ---------- */
 
 .menu-card > img {
     width: 100%;
 
-    height: 210px;
+    height: 195px;
 
     object-fit: cover;
+
+    display: block;
 }
 
 
+/* ---------- Product Information ---------- */
+
 .menu-card-info {
-    padding: 18px;
+    padding: 17px 17px 18px;
 }
 
 
 .menu-card-info h3 {
     color: #674040;
 
-    font-size: 18px;
+    font-size: 17px;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 
@@ -814,9 +820,9 @@ footer {
 
     line-height: 1.5;
 
-    min-height: 60px;
+    min-height: 58px;
 
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 
@@ -836,7 +842,7 @@ footer {
 .price {
     color: #bd6868;
 
-    font-size: 17px;
+    font-size: 16px;
 
     font-weight: bold;
 }
@@ -855,7 +861,7 @@ footer {
 
     font-family: inherit;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: bold;
 
@@ -873,9 +879,18 @@ footer {
 }
 
 
-/* ---------- Menu Responsive ---------- */
+/* ---------- Responsive ---------- */
 
 @media (max-width: 1050px) {
+
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 780px) {
 
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -887,12 +902,12 @@ footer {
 @media (max-width: 600px) {
 
     .menu-hero-content h1 {
-        font-size: 38px;
+        font-size: 36px;
     }
 
 
     .menu-section {
-        padding: 60px 20px;
+        padding: 55px 20px;
     }
 
 
@@ -902,7 +917,7 @@ footer {
 
 
     .menu-card > img {
-        height: 230px;
+        height: 220px;
     }
 
 }
