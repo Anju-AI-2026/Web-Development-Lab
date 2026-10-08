@@ -31,3 +31,24 @@ function addToCart(name, price, image) {
 
     alert(name + " added to cart!");
 }
+
+
+// ---------- Connect Menu Buttons ----------
+
+const cartButtons = document.querySelectorAll(".cart-btn");
+
+cartButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const name = button.dataset.name;
+        const price = Number(button.dataset.price);
+
+        const productCard = button.closest(".menu-card");
+        const image = productCard.querySelector("img").getAttribute("src");
+
+        addToCart(name, price, image);
+
+    });
+
+});
