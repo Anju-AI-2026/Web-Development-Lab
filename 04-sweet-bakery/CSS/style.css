@@ -1213,3 +1213,51 @@ footer {
     }
 
 }
+
+/* ---------- Cart Product Slider ---------- */
+
+.cart-item {
+    background-color: #fdf0ed;
+    border: 1px solid #f0dada;
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-item h3 {
+    color: #674040;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.cart-item p {
+    color: #765f5f;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.cart-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cart-navigation button {
+    background-color: #bd6868;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.cart-navigation button:hover {
+    background-color: #9e5050;
+    transform: translateY(-2px);
+}
