@@ -1266,6 +1266,9 @@ footer {
    CONTACT PAGE
    ========================================= */
 
+
+/* ---------- Contact Hero ---------- */
+
 .contact-hero {
     background-color: #f9e4e5;
     min-height: 300px;
@@ -1314,7 +1317,7 @@ footer {
 }
 
 
-/* ---------- Contact Information ---------- */
+/* ---------- Contact Cards ---------- */
 
 .contact-info,
 .contact-form-container {
@@ -1328,23 +1331,32 @@ footer {
     box-shadow: 0 5px 16px rgba(100, 60, 60, 0.08);
 }
 
+
+/* ---------- Headings ---------- */
+
 .contact-info h2,
 .contact-form-container h2 {
     color: #5c3535;
     font-size: 26px;
+
     margin-bottom: 18px;
 }
+
+
+/* ---------- Contact Information ---------- */
 
 .contact-info > p {
     color: #765f5f;
     font-size: 14px;
     line-height: 1.8;
+
     margin-bottom: 28px;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
+
     gap: 18px;
 }
 
@@ -1360,6 +1372,7 @@ footer {
 .contact-detail h3 {
     color: #674040;
     font-size: 16px;
+
     margin-bottom: 6px;
 }
 
@@ -1406,20 +1419,25 @@ footer {
 
     outline: none;
 
-    transition: border-color 0.3s ease,
-                box-shadow 0.3s ease;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #bd6868;
 
-    box-shadow: 0 0 0 3px rgba(189, 104, 104, 0.10);
+    box-shadow:
+        0 0 0 3px rgba(189, 104, 104, 0.10);
 }
 
 .form-group textarea {
     resize: vertical;
 }
+
+
+/* ---------- Buttons ---------- */
 
 .contact-btn {
     width: 100%;
@@ -1439,13 +1457,80 @@ footer {
 
     cursor: pointer;
 
-    transition: background-color 0.3s ease,
-                transform 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .contact-btn:hover {
     background-color: #9e5050;
+
     transform: translateY(-2px);
+}
+
+
+/* ---------- Space Between Buttons ---------- */
+
+.message-view-space {
+    height: 12px;
+}
+
+
+/* ---------- Saved Messages ---------- */
+
+#savedMessages {
+    margin-top: 18px;
+}
+
+.saved-message-card {
+    background-color: #fdf0ed;
+
+    border: 1px solid #f0dada;
+    border-radius: 12px;
+
+    padding: 18px 20px;
+
+    margin-top: 12px;
+}
+
+.saved-message-card h3 {
+    color: #674040;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+.saved-message-card p {
+    color: #765f5f;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 6px;
+}
+
+.saved-message-card strong {
+    color: #674040;
+}
+
+.saved-message-empty {
+    background-color: #fdf0ed;
+
+    border: 1px solid #f0dada;
+    border-radius: 12px;
+
+    padding: 16px;
+
+    margin-top: 12px;
+
+    text-align: center;
+}
+
+.saved-message-empty p {
+    color: #765f5f;
+
+    font-size: 13px;
 }
 
 
@@ -1458,6 +1543,7 @@ footer {
     }
 
 }
+
 
 @media (max-width: 600px) {
 
