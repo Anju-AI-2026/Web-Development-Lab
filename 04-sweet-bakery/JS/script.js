@@ -52,3 +52,57 @@ cartButtons.forEach(function(button) {
     });
 
 });
+
+// ---------- Cart Product Slider ----------
+
+let currentProduct = 0;
+
+function displayCart() {
+
+    const cartItems = document.querySelector(".cart-items");
+
+    if (!cartItems || cart.length === 0) {
+        return;
+    }
+
+    const item = cart[currentProduct];
+
+    cartItems.innerHTML = `
+        <h2>Your Items</h2>
+
+        <div class="cart-item">
+            <h3>${item.name}</h3>
+            <p>₹${item.price}</p>
+            <p>Quantity: ${item.quantity}</p>
+        </div>
+
+        <div class="cart-navigation">
+            <button onclick="previousProduct()">← Previous</button>
+            <button onclick="nextProduct()">Next →</button>
+        </div>
+    `;
+}
+
+function nextProduct() {
+
+    currentProduct++;
+
+    if (currentProduct >= cart.length) {
+        currentProduct = 0;
+    }
+
+    displayCart();
+}
+
+function previousProduct() {
+
+    currentProduct--;
+
+    if (currentProduct < 0) {
+        currentProduct = cart.length - 1;
+    }
+
+    displayCart();
+}
+
+displayCart();
