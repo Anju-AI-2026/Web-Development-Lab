@@ -53,7 +53,10 @@ cartButtons.forEach(function(button) {
 
 });
 
-// ---------- Cart Product Slider ----------
+
+// =========================================
+// CART PRODUCT SLIDER
+// =========================================
 
 let currentProduct = 0;
 
@@ -83,6 +86,7 @@ function displayCart() {
     `;
 }
 
+
 function nextProduct() {
 
     currentProduct++;
@@ -93,6 +97,7 @@ function nextProduct() {
 
     displayCart();
 }
+
 
 function previousProduct() {
 
@@ -105,4 +110,187 @@ function previousProduct() {
     displayCart();
 }
 
+
 displayCart();
+
+
+// =========================================
+// CONTACT FORM
+// =========================================
+
+// ---------- Load Saved Messages ----------
+
+let contactMessages =
+    JSON.parse(localStorage.getItem("contactMessages")) || [];
+
+
+// ---------- Contact Form ----------
+
+const contactForm = document.querySelector("#contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.querySelector("#name").value.trim();
+
+        const email =
+            document.querySelector("#email").value.trim();
+
+        const message =
+            document.querySelector("#message").value.trim();
+
+
+        // ---------- Validation ----------
+
+        if (name === "" || email === "" || message === "") {
+
+            alert("Please fill in all fields.");
+
+            return;
+        }
+
+
+        // ---------- Create Message ----------
+
+        const newMessage = {
+
+            name: name,
+            email: email,
+            message: message
+
+        };
+
+
+        // ---------- Add Message ----------
+
+        contactMessages.push(newMessage);
+
+
+        // ---------- Save Messages ----------
+
+        localStorage.setItem(
+            "contactMessages",
+            JSON.stringify(contactMessages)
+        );
+
+
+        // ---------- Success ----------
+
+        alert("Your message has been sent successfully! ❤️");
+
+
+        // ---------- Clear Form ----------
+
+        contactForm.reset();
+
+    });
+
+}
+
+
+// =========================================
+// VIEW SAVED MESSAGES
+// =========================================
+
+const viewMessagesBtn =
+    document.querySelector("#viewMessagesBtn");
+
+const savedMessages =
+    document.querySelector("#savedMessages");
+
+
+if (viewMessagesBtn && savedMessages) {
+
+    viewMessagesBtn.addEventListener("click", function() {
+
+
+        // ---------- Hide Messages ----------
+
+        if (savedMessages.innerHTML !== "") {
+
+            savedMessages.innerHTML = "";
+
+            viewMessagesBtn.textContent =
+                "View Saved Messages";
+
+            return;
+        }
+
+
+        // ---------- No Messages ----------
+
+        if (contactMessages.length === 0) {
+
+            savedMessages.innerHTML = `
+                <div class="saved-message-empty">
+
+                    <p>No saved messages yet.</p>
+
+                </div>
+            `;
+
+            viewMessagesBtn.textContent =
+                "Hide Saved Messages";
+
+            return;
+        }
+
+
+        // ---------- Clear Previous Display ----------
+
+        savedMessages.innerHTML = "";
+
+
+        // ---------- Display All Messages ----------
+
+        contactMessages.forEach(function(item, index) {
+
+            const messageCard =
+                document.createElement("div");
+
+            messageCard.className =
+                "saved-message-card";
+
+
+            messageCard.innerHTML = `
+
+                <h3>
+                    Message ${index + 1}
+                </h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    ${item.name}
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    ${item.email}
+                </p>
+
+                <p>
+                    <strong>Message:</strong>
+                    ${item.message}
+                </p>
+
+            `;
+
+
+            savedMessages.appendChild(messageCard);
+
+        });
+
+
+        // ---------- Change Button ----------
+
+        viewMessagesBtn.textContent =
+            "Hide Saved Messages";
+
+    });
+
+}
