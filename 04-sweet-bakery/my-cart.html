@@ -13,12 +13,10 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- NAVBAR -->
 
-        <a href="index.html" class="logo">
-            Sweet Bakery
-        </a>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Sweet Bakery</a>
 
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -27,81 +25,80 @@
             <a href="my-cart.html" class="active">My Cart</a>
             <a href="contact.html">Contact</a>
         </div>
-
     </nav>
 
 
-    <!-- Cart Hero -->
+    <!-- CART HERO -->
+
     <section class="cart-hero">
-
         <div class="cart-hero-content">
-
             <p class="small-heading">YOUR SWEET SELECTION</p>
 
             <h1>My Cart</h1>
 
-            <p>
-                Your favourite treats, ready to be enjoyed.
-            </p>
-
+            <p>Your favourite treats, ready to be enjoyed.</p>
         </div>
-
     </section>
 
 
-    <!-- Cart Section -->
+    <!-- CART SECTION -->
+
     <section class="cart-section">
 
         <div class="cart-container">
 
+            <!-- CART PRODUCTS -->
 
-            <!-- Cart Items -->
             <div class="cart-items">
-
                 <h2>Your Items</h2>
 
                 <div class="empty-cart">
-
                     <h3>Your cart is empty</h3>
 
-                    <p>
-                        Add some delicious treats from our menu!
-                    </p>
+                    <p>Add some delicious treats from our menu!</p>
 
                     <a href="menu.html" class="cart-btn">
                         Browse Menu
                     </a>
-
                 </div>
-
             </div>
 
 
-            <!-- Order Summary -->
+            <!-- ORDER SUMMARY -->
+
             <div class="cart-summary">
 
                 <h2>Order Summary</h2>
 
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span>₹0</span>
+                    <span id="cartSubtotal">₹0.00</span>
                 </div>
 
                 <div class="summary-row">
                     <span>Delivery</span>
-                    <span>₹0</span>
+                    <span id="cartDelivery">₹0.00</span>
                 </div>
 
                 <hr>
 
                 <div class="summary-row total-row">
                     <strong>Total</strong>
-                    <strong>₹0</strong>
+                    <strong id="cartTotal">₹0.00</strong>
                 </div>
 
-                <button class="cart-btn" disabled>
+                <button
+                    type="button"
+                    class="cart-btn"
+                    id="placeOrderBtn"
+                    disabled
+                >
                     Place Order
                 </button>
+
+                <p class="cart-note">
+                    Freshly baked happiness, just a click away! ❤️
+                </p>
 
             </div>
 
@@ -110,9 +107,9 @@
     </section>
 
 
-    <!-- Footer -->
-    <footer>
+    <!-- FOOTER -->
 
+    <footer>
         <div class="footer-content">
 
             <h3>Sweet Bakery</h3>
@@ -126,12 +123,14 @@
             </p>
 
         </div>
-
     </footer>
 
-</body>
 
-<script src="JS/script.js"></script>
+    <!-- JAVASCRIPT -->
+
+    <script src="JS/script.js"></script>
+
+</body>
 
 </html>
 ```
