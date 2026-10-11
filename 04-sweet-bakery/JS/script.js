@@ -6,12 +6,17 @@
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+let orderHistory =
+    JSON.parse(localStorage.getItem("orderHistory")) || [];
+
 
 // ---------- Add Product to Cart ----------
 
 function addToCart(name, price, image) {
 
-    const existingProduct = cart.find(item => item.name === name);
+    const existingProduct = cart.find(
+        item => item.name === name
+    );
 
     if (existingProduct) {
         existingProduct.quantity += 1;
@@ -41,12 +46,12 @@ cartButtons.forEach(function(button) {
         const name = button.dataset.name;
         const price = Number(button.dataset.price);
 
-        // Only handle product Add to Cart buttons.
         if (!name || button.dataset.price === undefined) {
             return;
         }
 
         const productCard = button.closest(".menu-card");
+
         const imageElement = productCard
             ? productCard.querySelector("img")
             : null;
@@ -89,7 +94,9 @@ function displayCart() {
             <div class="empty-cart">
                 <h3>Your cart is empty</h3>
                 <p>Add some delicious treats from our menu!</p>
-                <a href="menu.html" class="cart-btn">Browse Menu</a>
+                <a href="menu.html" class="cart-btn">
+                    Browse Menu
+                </a>
             </div>
         `;
 
@@ -97,7 +104,6 @@ function displayCart() {
         return;
     }
 
-    // Keep the selected product index valid.
     if (currentProduct >= cart.length) {
         currentProduct = cart.length - 1;
     }
@@ -119,22 +125,24 @@ function displayCart() {
 
             ${
                 item.image
-                    ? `<img src="${item.image}" alt="${item.name}" class="cart-product-image">`
+                    ? `<img
+                        src="${item.image}"
+                        alt="${item.name}"
+                        class="cart-product-image"
+                    >`
                     : ""
             }
 
-            <h3>${item.name}</h3>
+            <h3></h3>
 
-            <p>Price: ₹${price.toFixed(2)}</p>
-
-            <p>Quantity: ${quantity}</p>
-
-            <p>Item Total: ₹${itemTotal.toFixed(2)}</p>
+            <p class="cart-product-price"></p>
+            <p class="cart-product-quantity"></p>
+            <p class="cart-product-total"></p>
 
             <button
                 type="button"
                 class="remove-cart-item"
-                onclick="removeCartItem(${currentProduct})"
+                id="removeCartItemBtn"
             >
                 Remove
             </button>
@@ -145,17 +153,19 @@ function displayCart() {
 
             <button
                 type="button"
-                onclick="previousProduct()"
+                id="previousProductBtn"
                 ${cart.length <= 1 ? "disabled" : ""}
             >
                 ← Previous
             </button>
 
-            <span>Product ${currentProduct + 1} of ${cart.length}</span>
+            <span>
+                Product ${currentProduct + 1} of ${cart.length}
+            </span>
 
             <button
                 type="button"
-                onclick="nextProduct()"
+                id="nextProductBtn"
                 ${cart.length <= 1 ? "disabled" : ""}
             >
                 Next →
@@ -163,6 +173,33 @@ function displayCart() {
 
         </div>
     `;
+
+    const productCard = cartItems.querySelector(".cart-item");
+
+    productCard.querySelector("h3").textContent = item.name;
+
+    productCard.querySelector(".cart-product-price").textContent =
+        "Price: ₹" + price.toFixed(2);
+
+    productCard.querySelector(".cart-product-quantity").textContent =
+        "Quantity: " + quantity;
+
+    productCard.querySelector(".cart-product-total").textContent =
+        "Item Total: ₹" + itemTotal.toFixed(2);
+
+    document
+        .querySelector("#removeCartItemBtn")
+        .addEventListener("click", function() {
+            removeCartItem(currentProduct);
+        });
+
+    document
+        .querySelector("#previousProductBtn")
+        .addEventListener("click", previousProduct);
+
+    document
+        .querySelector("#nextProductBtn")
+        .addEventListener("click", nextProduct);
 
     calculateCartTotal();
 
@@ -248,24 +285,37 @@ function calculateCartTotal() {
 
     });
 
-    const delivery = cart.length > 0 ? DELIVERY_CHARGE : 0;
+    const delivery = cart.length > 0
+        ? DELIVERY_CHARGE
+        : 0;
+
     const total = subtotal + delivery;
 
-    const subtotalElement = document.getElementById("cartSubtotal");
-    const deliveryElement = document.getElementById("cartDelivery");
-    const totalElement = document.getElementById("cartTotal");
-    const placeOrderButton = document.getElementById("placeOrderBtn");
+    const subtotalElement =
+        document.getElementById("cartSubtotal");
+
+    const deliveryElement =
+        document.getElementById("cartDelivery");
+
+    const totalElement =
+        document.getElementById("cartTotal");
+
+    const placeOrderButton =
+        document.getElementById("placeOrderBtn");
 
     if (subtotalElement) {
-        subtotalElement.textContent = "₹" + subtotal.toFixed(2);
+        subtotalElement.textContent =
+            "₹" + subtotal.toFixed(2);
     }
 
     if (deliveryElement) {
-        deliveryElement.textContent = "₹" + delivery.toFixed(2);
+        deliveryElement.textContent =
+            "₹" + delivery.toFixed(2);
     }
 
     if (totalElement) {
-        totalElement.textContent = "₹" + total.toFixed(2);
+        totalElement.textContent =
+            "₹" + total.toFixed(2);
     }
 
     if (placeOrderButton) {
@@ -279,14 +329,17 @@ function calculateCartTotal() {
 // PLACE ORDER
 // =========================================
 
-const placeOrderButton = document.getElementById("placeOrderBtn");
+const placeOrderButton =
+    document.getElementById("placeOrderBtn");
 
 if (placeOrderButton) {
 
     placeOrderButton.addEventListener("click", function() {
 
         if (cart.length === 0) {
-            alert("Your cart is empty. Please add some treats first!");
+            alert(
+                "Your cart is empty. Please add some treats first!"
+            );
             return;
         }
 
@@ -310,6 +363,33 @@ if (placeOrderButton) {
             return;
         }
 
+        // ---------- Save Order Before Clearing Cart ----------
+
+        const newOrder = {
+            orderNumber: Date.now(),
+            date: new Date().toLocaleString(),
+
+            items: cart.map(function(item) {
+                return {
+                    name: item.name,
+                    price: Number(item.price) || 0,
+                    quantity: Number(item.quantity) || 1,
+                    image: item.image || ""
+                };
+            }),
+
+            total: total
+        };
+
+        orderHistory.push(newOrder);
+
+        localStorage.setItem(
+            "orderHistory",
+            JSON.stringify(orderHistory)
+        );
+
+        // ---------- Clear Cart ----------
+
         cart = [];
         currentProduct = 0;
 
@@ -321,6 +401,122 @@ if (placeOrderButton) {
             "Your order has been placed successfully! ❤️\n" +
             "Thank you for choosing Sweet Bakery!"
         );
+
+    });
+
+}
+
+
+// =========================================
+// VIEW ORDER HISTORY
+// =========================================
+
+const viewOrderHistoryBtn =
+    document.querySelector("#viewOrderHistoryBtn");
+
+const orderHistoryContainer =
+    document.querySelector("#orderHistory");
+
+
+if (viewOrderHistoryBtn && orderHistoryContainer) {
+
+    viewOrderHistoryBtn.addEventListener("click", function() {
+
+        // ---------- Hide Order History ----------
+
+        if (orderHistoryContainer.innerHTML !== "") {
+
+            orderHistoryContainer.innerHTML = "";
+
+            viewOrderHistoryBtn.textContent =
+                "View Order History";
+
+            return;
+
+        }
+
+        // ---------- No Orders Yet ----------
+
+        if (orderHistory.length === 0) {
+
+            const emptyMessage = document.createElement("div");
+            emptyMessage.className = "order-history-empty";
+
+            const heading = document.createElement("h3");
+            heading.textContent = "No orders yet 🧁";
+
+            const message = document.createElement("p");
+            message.textContent =
+                "Your confirmed orders will appear here.";
+
+            emptyMessage.appendChild(heading);
+            emptyMessage.appendChild(message);
+
+            orderHistoryContainer.appendChild(emptyMessage);
+
+            viewOrderHistoryBtn.textContent =
+                "Hide Order History";
+
+            return;
+
+        }
+
+        // ---------- Display Newest Orders First ----------
+
+        orderHistoryContainer.innerHTML = "";
+
+        [...orderHistory].reverse().forEach(function(order) {
+
+            const orderCard = document.createElement("div");
+            orderCard.className = "order-history-card";
+
+            const heading = document.createElement("h3");
+            heading.textContent =
+                "Order #" + order.orderNumber;
+
+            orderCard.appendChild(heading);
+
+            const dateText = document.createElement("p");
+            dateText.textContent = "Date: " + order.date;
+
+            orderCard.appendChild(dateText);
+
+            const itemsHeading = document.createElement("h4");
+            itemsHeading.textContent = "Items";
+
+            orderCard.appendChild(itemsHeading);
+
+            order.items.forEach(function(item) {
+
+                const itemText = document.createElement("p");
+
+                const itemTotal =
+                    (Number(item.price) || 0) *
+                    (Number(item.quantity) || 1);
+
+                itemText.textContent =
+                    item.name +
+                    " × " + item.quantity +
+                    " — ₹" + itemTotal.toFixed(2);
+
+                orderCard.appendChild(itemText);
+
+            });
+
+            const totalText = document.createElement("p");
+
+            totalText.textContent =
+                "Order Total: ₹" +
+                Number(order.total).toFixed(2);
+
+            orderCard.appendChild(totalText);
+
+            orderHistoryContainer.appendChild(orderCard);
+
+        });
+
+        viewOrderHistoryBtn.textContent =
+            "Hide Order History";
 
     });
 
@@ -342,7 +538,8 @@ let contactMessages =
 
 // ---------- Contact Form ----------
 
-const contactForm = document.querySelector("#contactForm");
+const contactForm =
+    document.querySelector("#contactForm");
 
 if (contactForm) {
 
@@ -413,7 +610,8 @@ if (viewMessagesBtn && savedMessages) {
 
             savedMessages.innerHTML = "";
 
-            viewMessagesBtn.textContent = "View Saved Messages";
+            viewMessagesBtn.textContent =
+                "View Saved Messages";
 
             return;
 
@@ -429,7 +627,8 @@ if (viewMessagesBtn && savedMessages) {
                 </div>
             `;
 
-            viewMessagesBtn.textContent = "Hide Saved Messages";
+            viewMessagesBtn.textContent =
+                "Hide Saved Messages";
 
             return;
 
@@ -465,7 +664,8 @@ if (viewMessagesBtn && savedMessages) {
 
         });
 
-        viewMessagesBtn.textContent = "Hide Saved Messages";
+        viewMessagesBtn.textContent =
+            "Hide Saved Messages";
 
     });
 
