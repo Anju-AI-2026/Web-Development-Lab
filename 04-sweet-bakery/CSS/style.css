@@ -1561,3 +1561,45 @@ footer {
     }
 
 }
+
+
+/* =========================================
+   ORDER HISTORY
+========================================= */
+
+#viewOrderHistoryBtn {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.order-history {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.order-history-card,
+.order-history-empty {
+    background: #fff8f0;
+    border: 1px solid #ead8c8;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.order-history-card h3,
+.order-history-empty h3 {
+    color: #75452f;
+    margin-bottom: 10px;
+}
+
+.order-history-card h4 {
+    margin-top: 15px;
+    color: #75452f;
+}
+
+.order-history-card p,
+.order-history-empty p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
