@@ -1603,3 +1603,144 @@ footer {
     margin: 8px 0;
     line-height: 1.6;
 }
+
+
+
+/* =========================================
+   LOGIN & SIGN UP PAGE
+   ========================================= */
+
+.auth-section {
+    background-color: #fffaf7;
+    padding: 70px 20px 85px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    padding: 38px;
+
+    background-color: #ffffff;
+    border: 1px solid #f0dada;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(100, 60, 60, 0.08);
+}
+
+.auth-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-heading h2 {
+    color: #5c3535;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.auth-heading p {
+    color: #765858;
+    font-size: 14px;
+}
+
+.auth-form label {
+    display: block;
+    color: #674040;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+
+    border: 1px solid #f0dada;
+    border-radius: 10px;
+    background-color: #fffaf7;
+
+    color: #5a3b3b;
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: #bd6868;
+    box-shadow: 0 0 0 3px rgba(189, 104, 104, 0.10);
+}
+
+.auth-form .cart-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 13px;
+}
+
+.auth-switch {
+    margin-top: 22px;
+    text-align: center;
+    color: #765f5f;
+    font-size: 13px;
+}
+
+.auth-switch button {
+    border: none;
+    background: none;
+    color: #bd6868;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-switch button:hover {
+    color: #9e5050;
+    text-decoration: underline;
+}
+
+.auth-message {
+    margin-top: 18px;
+    text-align: center;
+    color: #765858;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.auth-home-link {
+    display: block;
+    width: fit-content;
+    margin: 22px auto 0;
+
+    color: #bd6868;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.auth-home-link:hover {
+    color: #9e5050;
+}
+
+.auth-form[hidden] {
+    display: none;
+}
+
+/* ---------- Login Page Responsive ---------- */
+
+@media (max-width: 600px) {
+    .auth-section {
+        padding: 45px 18px 60px;
+    }
+
+    .auth-container {
+        padding: 26px 22px;
+    }
+
+    .auth-heading h2 {
+        font-size: 27px;
+    }
+}
