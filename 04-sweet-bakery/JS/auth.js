@@ -9,8 +9,14 @@ const authTitle = document.getElementById("authTitle");
 const authSubtitle = document.getElementById("authSubtitle");
 const authMessage = document.getElementById("authMessage");
 
-// Switch between Login and Sign Up forms.
+// Check whether this browser already has a demo session.
+const savedSession = localStorage.getItem("sweetBakeryLoggedIn");
 
+if (savedSession === "true") {
+    window.location.replace("index.html");
+}
+
+// Switch to Sign Up.
 showSignupButton.addEventListener("click", function () {
     loginForm.hidden = true;
     signupForm.hidden = false;
@@ -20,6 +26,7 @@ showSignupButton.addEventListener("click", function () {
     authMessage.textContent = "";
 });
 
+// Switch to Login.
 showLoginButton.addEventListener("click", function () {
     signupForm.hidden = true;
     loginForm.hidden = false;
@@ -30,9 +37,7 @@ showLoginButton.addEventListener("click", function () {
     authMessage.textContent = "";
 });
 
-// Demo-only validation.
-// No accounts or passwords are stored.
-
+// Demo Sign Up.
 signupForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -60,12 +65,22 @@ signupForm.addEventListener("submit", function (event) {
         return;
     }
 
+    // Save only the demo session status, never the password.
+    localStorage.setItem("sweetBakeryLoggedIn", "true");
+    localStorage.setItem("sweetBakeryUserName", name);
+    localStorage.setItem("sweetBakeryUserEmail", email);
+
     authMessage.textContent =
-        "Sign-up demo successful! This page does not create or save an account.";
+        "Your account demo is ready! Opening Sweet Bakery...";
 
     signupForm.reset();
+
+    setTimeout(function () {
+        window.location.replace("index.html");
+    }, 1000);
 });
 
+// Demo Login.
 loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -74,12 +89,20 @@ loginForm.addEventListener("submit", function (event) {
 
     if (!email || !password) {
         authMessage.textContent =
-            "Please enter both your email and password.";
+            "Please enter your email and password.";
         return;
     }
 
+    // This is a demo: it does not verify real account credentials.
+    localStorage.setItem("sweetBakeryLoggedIn", "true");
+    localStorage.setItem("sweetBakeryUserEmail", email);
+
     authMessage.textContent =
-        "This is a front-end demo. Real account login is not connected yet.";
+        "Welcome back! Opening Sweet Bakery...";
 
     loginForm.reset();
+
+    setTimeout(function () {
+        window.location.replace("index.html");
+    }, 1000);
 });
