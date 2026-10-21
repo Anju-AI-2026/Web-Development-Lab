@@ -9,6 +9,12 @@
     <title>Login & Sign Up | Sweet Bakery</title>
 
     <link rel="stylesheet" href="CSS/style.css">
+
+    <script>
+    if (localStorage.getItem("sweetBakeryLoggedIn") === "true") {
+        window.location.replace("index.html");
+    }
+</script>
 </head>
 
 <body>
@@ -38,17 +44,14 @@
         </div>
     </section>
 
-    <!-- ACCOUNT SECTION -->
+    <!-- LOGIN AND SIGN UP -->
 
     <section class="auth-section">
-
         <div class="auth-container">
 
             <div class="auth-heading">
                 <h2 id="authTitle">Welcome Back!</h2>
-                <p id="authSubtitle">
-                    Log in to your Sweet Bakery account.
-                </p>
+                <p id="authSubtitle">Log in to your Sweet Bakery account.</p>
             </div>
 
             <!-- LOGIN FORM -->
@@ -73,17 +76,12 @@
                     required
                 >
 
-                <button type="submit" class="cart-btn">
-                    Login
-                </button>
+                <button type="submit" class="cart-btn">Login</button>
 
                 <p class="auth-switch">
                     New here?
-                    <button type="button" id="showSignup">
-                        Create an account
-                    </button>
+                    <button type="button" id="showSignup">Create an account</button>
                 </p>
-
             </form>
 
             <!-- SIGN UP FORM -->
@@ -95,8 +93,8 @@
                     type="text"
                     id="signupName"
                     placeholder="Enter your name"
-                    autocomplete="name"
                     minlength="2"
+                    autocomplete="name"
                     required
                 >
 
@@ -114,8 +112,8 @@
                     type="password"
                     id="signupPassword"
                     placeholder="At least 8 characters"
-                    autocomplete="new-password"
                     minlength="8"
+                    autocomplete="new-password"
                     required
                 >
 
@@ -124,54 +122,34 @@
                     type="password"
                     id="confirmPassword"
                     placeholder="Enter your password again"
-                    autocomplete="new-password"
                     minlength="8"
+                    autocomplete="new-password"
                     required
                 >
 
-                <button type="submit" class="cart-btn">
-                    Sign Up
-                </button>
+                <button type="submit" class="cart-btn">Sign Up</button>
 
                 <p class="auth-switch">
                     Already have an account?
-                    <button type="button" id="showLogin">
-                        Login
-                    </button>
+                    <button type="button" id="showLogin">Login</button>
                 </p>
-
             </form>
 
-            <p
-                id="authMessage"
-                class="auth-message"
-                role="status"
-                aria-live="polite"
-            ></p>
+            <p id="authMessage" class="auth-message" role="status" aria-live="polite"></p>
 
-            <a href="index.html" class="auth-home-link">
-                ← Back to Home
-            </a>
+            <a href="index.html" class="auth-home-link">← Back to Home</a>
 
         </div>
-
     </section>
 
     <!-- FOOTER -->
 
     <footer>
         <div class="footer-content">
-
             <h3>Sweet Bakery</h3>
-
             <p>Freshly baked happiness, made with love.</p>
-
             <div class="footer-line"></div>
-
-            <p class="copyright">
-                © 2026 Sweet Bakery. All rights reserved.
-            </p>
-
+            <p class="copyright">© 2026 Sweet Bakery. All rights reserved.</p>
         </div>
     </footer>
 
