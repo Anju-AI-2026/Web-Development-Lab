@@ -2,22 +2,33 @@
 const loginForm = document.getElementById("loginForm");
 const signupForm = document.getElementById("signupForm");
 
-const showSignupButton = document.getElementById("showSignup");
-const showLoginButton = document.getElementById("showLogin");
-
 const authTitle = document.getElementById("authTitle");
 const authSubtitle = document.getElementById("authSubtitle");
 const authMessage = document.getElementById("authMessage");
 
-// Check whether this browser already has a demo session.
-const savedSession = localStorage.getItem("sweetBakeryLoggedIn");
+const ACCOUNT_KEY = "sweetBakeryAccounts";
+const SESSION_KEY = "sweetBakeryLoggedIn";
 
-if (savedSession === "true") {
-    window.location.replace("index.html");
+function getAccounts() {
+    try {
+        return JSON.parse(localStorage.getItem(ACCOUNT_KEY)) || {};
+    } catch {
+        return {};
+    }
+}
+
+// Demo-only password hash. Not suitable for real authentication.
+async function hashPassword(password) {
+    const data = new TextEncoder().encode(password);
+    const hash = await crypto.subtle.digest("SHA-256", data);
+
+    return Array.from(new Uint8Array(hash))
+        .map(byte => byte.toString(16).padStart(2, "0"))
+        .join("");
 }
 
 // Switch to Sign Up.
-showSignupButton.addEventListener("click", function () {
+document.getElementById("showSignup").addEventListener("click", function () {
     loginForm.hidden = true;
     signupForm.hidden = false;
 
@@ -27,82 +38,98 @@ showSignupButton.addEventListener("click", function () {
 });
 
 // Switch to Login.
-showLoginButton.addEventListener("click", function () {
+document.getElementById("showLogin").addEventListener("click", function () {
     signupForm.hidden = true;
     loginForm.hidden = false;
 
     authTitle.textContent = "Welcome Back!";
-    authSubtitle.textContent =
-        "Log in to your Sweet Bakery account.";
+    authSubtitle.textContent = "Log in to your Sweet Bakery account.";
     authMessage.textContent = "";
 });
 
-// Demo Sign Up.
-signupForm.addEventListener("submit", function (event) {
+// Sign Up.
+signupForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const name = document.getElementById("signupName").value.trim();
-    const email = document.getElementById("signupEmail").value.trim();
+    const email = document.getElementById("signupEmail").value.trim().toLowerCase();
     const password = document.getElementById("signupPassword").value;
-    const confirmPassword =
-        document.getElementById("confirmPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
     if (name.length < 2) {
-        authMessage.textContent =
-            "Please enter a name with at least 2 characters.";
+        authMessage.textContent = "Please enter your name.";
         return;
     }
 
     if (password.length < 8) {
-        authMessage.textContent =
-            "Your password must contain at least 8 characters.";
+        authMessage.textContent = "Password must be at least 8 characters.";
         return;
     }
 
     if (password !== confirmPassword) {
-        authMessage.textContent =
-            "Your passwords do not match. Please try again.";
+        authMessage.textContent = "Your passwords do not match.";
         return;
     }
 
-    // Save only the demo session status, never the password.
-    localStorage.setItem("sweetBakeryLoggedIn", "true");
+    const accounts = getAccounts();
+
+    if (accounts[email]) {
+        authMessage.textContent = "This email is already registered. Please log in.";
+        return;
+    }
+
+    const passwordHash = await hashPassword(password);
+
+    accounts[email] = {
+        name: name,
+        passwordHash: passwordHash
+    };
+
+    localStorage.setItem(ACCOUNT_KEY, JSON.stringify(accounts));
+    localStorage.setItem(SESSION_KEY, "true");
     localStorage.setItem("sweetBakeryUserName", name);
     localStorage.setItem("sweetBakeryUserEmail", email);
 
-    authMessage.textContent =
-        "Your account demo is ready! Opening Sweet Bakery...";
+    authMessage.textContent = "Account created! Welcome to Sweet Bakery.";
 
     signupForm.reset();
 
     setTimeout(function () {
         window.location.replace("index.html");
-    }, 1000);
+    }, 700);
 });
 
-// Demo Login.
-loginForm.addEventListener("submit", function (event) {
+// Login.
+loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const email = document.getElementById("loginEmail").value.trim();
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
     const password = document.getElementById("loginPassword").value;
 
-    if (!email || !password) {
-        authMessage.textContent =
-            "Please enter your email and password.";
+    const accounts = getAccounts();
+    const account = accounts[email];
+
+    if (!account) {
+        authMessage.textContent = "No account found with this email. Please sign up first.";
         return;
     }
 
-    // This is a demo: it does not verify real account credentials.
-    localStorage.setItem("sweetBakeryLoggedIn", "true");
+    const passwordHash = await hashPassword(password);
+
+    if (passwordHash !== account.passwordHash) {
+        authMessage.textContent = "Incorrect password. Please try again.";
+        return;
+    }
+
+    localStorage.setItem(SESSION_KEY, "true");
+    localStorage.setItem("sweetBakeryUserName", account.name);
     localStorage.setItem("sweetBakeryUserEmail", email);
 
-    authMessage.textContent =
-        "Welcome back! Opening Sweet Bakery...";
+    authMessage.textContent = "Login successful! Welcome back.";
 
     loginForm.reset();
 
     setTimeout(function () {
         window.location.replace("index.html");
-    }, 1000);
+    }, 700);
 });
