@@ -5,99 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My To-Do List</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3e8ff;
-            margin: 0;
-            padding: 40px 15px;
-        }
-
-        .container {
-            max-width: 450px;
-            margin: auto;
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #7e22ce;
-        }
-
-        .input-section {
-            display: flex;
-            gap: 8px;
-        }
-
-        input {
-            flex: 1;
-            min-width: 0;
-            padding: 12px;
-            border: 1px solid #d8b4fe;
-            border-radius: 6px;
-            font-size: 15px;
-        }
-
-        button {
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            background-color: #9333ea;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #7e22ce;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            background-color: #faf5ff;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 6px;
-            overflow-wrap: anywhere;
-        }
-
-        li span {
-            flex: 1;
-        }
-
-        li.completed span {
-            text-decoration: line-through;
-            color: gray;
-        }
-
-        .delete-btn {
-            background-color: #ef4444;
-        }
-
-        .delete-btn:hover {
-            background-color: #dc2626;
-        }
-
-        #message {
-            text-align: center;
-            color: #7e22ce;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -114,50 +23,6 @@
 
         <ul id="taskList"></ul>
     </div>
-
-    <script>
-        function addTask() {
-            const input = document.getElementById("taskInput");
-            const task = input.value.trim();
-            const message = document.getElementById("message");
-
-            if (task === "") {
-                message.textContent = "Please enter a task!";
-                return;
-            }
-
-            const list = document.getElementById("taskList");
-            const item = document.createElement("li");
-            const taskText = document.createElement("span");
-            const deleteButton = document.createElement("button");
-
-            taskText.textContent = task;
-            deleteButton.textContent = "Delete";
-            deleteButton.className = "delete-btn";
-
-            taskText.addEventListener("click", function () {
-                item.classList.toggle("completed");
-            });
-
-            deleteButton.addEventListener("click", function () {
-                item.remove();
-            });
-
-            item.appendChild(taskText);
-            item.appendChild(deleteButton);
-            list.appendChild(item);
-
-            input.value = "";
-            message.textContent = "";
-            input.focus();
-        }
-
-        document.getElementById("taskInput").addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                addTask();
-            }
-        });
-    </script>
 
 </body>
 </html>
