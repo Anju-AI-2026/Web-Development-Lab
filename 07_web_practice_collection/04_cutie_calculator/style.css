@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fce4ec, #f8cbd9, #eadcf5);
+    padding: 35px 20px;
+    color: #704b5a;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #b65379;
+    letter-spacing: 1px;
+}
+
+.page-header h1 span {
+    color: #d77da0;
+}
+
+.page-header p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #986c7d;
+}
+
+.calculator-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 480px) minmax(280px, 400px);
+    justify-content: center;
+    align-items: start;
+    gap: 22px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.calculator-card,
+.history-card {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 24px;
+    padding: 26px;
+    box-shadow: 0 10px 30px rgba(160, 83, 113, 0.12);
+}
+
+.display {
+    min-height: 145px;
+    background: #fff0f4;
+    border: 1px solid #f5d1df;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.expression {
+    min-height: 25px;
+    width: 100%;
+    text-align: right;
+    color: #ae8293;
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.result {
+    width: 100%;
+    text-align: right;
+    color: #bd557f;
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: 8px;
+    overflow-wrap: anywhere;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 11px;
+}
+
+.button-grid button {
+    min-height: 62px;
+    border: none;
+    border-radius: 15px;
+    background: #f9dce6;
+    color: #89546b;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 9px rgba(180, 105, 137, 0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button-grid button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(180, 105, 137, 0.2);
+}
+
+.button-grid button:active {
+    transform: scale(0.96);
+}
+
+.button-grid .operator-btn {
+    background: #ed9cbe;
+    color: white;
+}
+
+.button-grid .special-btn {
+    background: #c8a4e5;
+    color: white;
+}
+
+.button-grid .clear-btn {
+    background: #d76e91;
+    color: white;
+}
+
+.button-grid .zero-btn {
+    grid-column: span 2;
+}
+
+.button-grid .equals-btn {
+    background: #bd557f;
+    color: white;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    color: #bd8299;
+    font-size: 13px;
+}
+
+/* History section */
+
+.history-card {
+    min-height: 350px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f2dce5;
+}
+
+.history-header h2 {
+    font-size: 21px;
+    color: #b65379;
+}
+
+.history-header h2 span {
+    color: #d77da0;
+}
+
+.history-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.history-actions button,
+.delete-history {
+    background: none;
+    border: none;
+    color: #c46c8d;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.history-actions button:hover,
+.delete-history:hover {
+    color: #963e65;
+    text-decoration: underline;
+}
+
+.history-count {
+    text-align: right;
+    font-size: 12px;
+    color: #ae8293;
+    margin: 14px 0;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-item {
+    background: #fff2f6;
+    border-left: 4px solid #e99ab8;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.history-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-calculation {
+    font-size: 15px;
+    color: #805466;
+    overflow-wrap: anywhere;
+}
+
+.history-answer {
+    color: #bd557f;
+    font-weight: bold;
+}
+
+.history-time {
+    margin-top: 7px;
+    font-size: 12px;
+    color: #ae929d;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 35px 10px;
+    color: #b58c9e;
+    font-size: 14px;
+}
+
+.history-footer {
+    text-align: center;
+    color: #c28ba1;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+/* Responsive design */
+
+@media (max-width: 750px) {
+    .calculator-layout {
+        grid-template-columns: minmax(0, 480px);
+    }
+
+    .history-card {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .calculator-card,
+    .history-card {
+        padding: 17px;
+    }
+
+    .button-grid {
+        gap: 8px;
+    }
+
+    .button-grid button {
+        min-height: 55px;
+        font-size: 18px;
+    }
+
+    .history-header {
+        flex-wrap: wrap;
+    }
+}
