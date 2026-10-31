@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cutie Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>cutie calculator <span>♡</span></h1>
+        <p>A little space for your calculations</p>
+    </header>
+
+    <main class="calculator-layout">
+
+        <section class="calculator-card">
+
+            <div class="display">
+                <div id="expression" class="expression"> </div>
+                <div id="result" class="result">0</div>
+            </div>
+
+            <div class="button-grid">
+
+                <button class="clear-btn" data-action="clear">C</button>
+                <button class="special-btn" data-value="(">(</button>
+                <button class="special-btn" data-value=")">)</button>
+                <button class="operator-btn" data-value="/">÷</button>
+
+                <button data-value="7">7</button>
+                <button data-value="8">8</button>
+                <button data-value="9">9</button>
+                <button class="operator-btn" data-value="*">×</button>
+
+                <button data-value="4">4</button>
+                <button data-value="5">5</button>
+                <button data-value="6">6</button>
+                <button class="operator-btn" data-value="-">−</button>
+
+                <button data-value="1">1</button>
+                <button data-value="2">2</button>
+                <button data-value="3">3</button>
+                <button class="operator-btn" data-value="+">+</button>
+
+                <button class="zero-btn" data-value="0">0</button>
+                <button data-value=".">.</button>
+                <button class="special-btn" data-action="backspace">⌫</button>
+                <button class="equals-btn" data-action="calculate">=</button>
+
+            </div>
+
+            <p id="message" class="message">made with love ♡</p>
+
+        </section>
+
+        <aside class="history-card">
+
+            <div class="history-header">
+                <h2>History <span>♡</span></h2>
+
+                <div class="history-actions">
+                    <button id="refreshHistory">Refresh</button>
+                    <button id="clearHistory">Clear all</button>
+                </div>
+            </div>
+
+            <p id="historyCount" class="history-count">0 calculations</p>
+
+            <div id="historyList" class="history-list">
+                <p class="empty-history">Your calculations will appear here ♡</p>
+            </div>
+
+            <div class="history-footer">every little number counts ♡</div>
+
+        </aside>
+
+    </main>
+
+</body>
+</html>
