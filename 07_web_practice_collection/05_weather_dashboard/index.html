@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">☀</span>
+                <h1>Weatherly</h1>
+            </div>
+
+            <p>Your daily weather companion</p>
+        </header>
+
+        <section class="search-section">
+            <form id="search-form">
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="search-btn">
+                    Search
+                </button>
+            </form>
+
+            <p id="error-message" class="error-message"></p>
+        </section>
+
+        <section class="current-weather">
+
+            <div class="location-info">
+                <div>
+                    <h2 id="city-name">Search a city</h2>
+                    <p id="current-date">Your local weather forecast</p>
+                </div>
+
+                <span id="weather-icon" class="weather-icon">🌤️</span>
+            </div>
+
+            <div class="temperature-info">
+                <h3 id="temperature">--°</h3>
+                <p id="weather-description">Weather condition</p>
+                <p id="feels-like">Feels like --°</p>
+            </div>
+
+            <div class="weather-details">
+
+                <div class="detail-card">
+                    <span class="detail-icon">💧</span>
+                    <div>
+                        <p>Humidity</p>
+                        <h4 id="humidity">--%</h4>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <span class="detail-icon">💨</span>
+                    <div>
+                        <p>Wind Speed</p>
+                        <h4 id="wind-speed">-- km/h</h4>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <span class="detail-icon">🌡️</span>
+                    <div>
+                        <p>Feels Like</p>
+                        <h4 id="detail-feels-like">--°</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="forecast-section">
+            <div class="section-heading">
+                <h2>5-Day Forecast</h2>
+                <p>Coming days at a glance</p>
+            </div>
+
+            <div id="forecast-container" class="forecast-container">
+                <p class="forecast-placeholder">
+                    Search for a city to see its forecast.
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Weather data by <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a></p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
