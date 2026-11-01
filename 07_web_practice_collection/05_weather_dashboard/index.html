@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Weatherly | Weather Dashboard</title>
+    <title>Weatherly | A Little Weather World</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 </head>
 
@@ -20,36 +20,58 @@
 
     <main class="dashboard">
 
+        <!-- Decorative Background -->
+
+        <div class="decoration cloud-one">☁</div>
+        <div class="decoration cloud-two">☁</div>
+        <div class="decoration sparkle-one">✦</div>
+        <div class="decoration sparkle-two">✧</div>
+
+
         <!-- Header -->
 
         <header class="header">
 
-            <div class="logo">
-                <span class="logo-icon">☀</span>
-                <h1>Weatherly</h1>
-            </div>
+            <a href="#" class="brand">
+                <span class="brand-icon">☀️</span>
 
-            <p>Your daily weather companion</p>
+                <div>
+                    <h1>weatherly<span>.</span></h1>
+                    <p>a little sunshine in your day</p>
+                </div>
+            </a>
+
+            <div class="header-label">
+                <span class="status-dot"></span>
+                Your weather corner
+            </div>
 
         </header>
 
 
-        <!-- Search Section -->
+        <!-- Search -->
 
         <section class="search-section">
 
-            <form id="search-form">
+            <div class="search-heading">
+                <h2>Where are we going today? <span>🌷</span></h2>
+                <p>Find the weather in your favourite place</p>
+            </div>
+
+            <form id="search-form" class="search-form">
+
+                <span class="search-icon">⌕</span>
 
                 <input
                     type="text"
                     id="city-input"
-                    placeholder="Search city... (e.g. Seoul, Tokyo)"
+                    placeholder="Enter a city name..."
                     autocomplete="off"
                     required
                 >
 
                 <button type="submit" id="search-btn">
-                    Search
+                    Explore ✨
                 </button>
 
             </form>
@@ -59,94 +81,114 @@
         </section>
 
 
-        <!-- Current Weather -->
+        <!-- Main Dashboard -->
 
-        <section class="current-weather">
-
-            <div class="location-info">
-
-                <div>
-                    <h2 id="city-name">Search a city</h2>
-                    <p id="current-date">Your local weather forecast</p>
-                </div>
-
-                <span id="weather-icon" class="weather-icon">🌤️</span>
-
-            </div>
+        <section class="weather-layout">
 
 
-            <div class="temperature-info">
+            <!-- Current Weather -->
 
-                <h3 id="temperature">--°</h3>
+            <div class="current-weather">
 
-                <p id="weather-description">Weather condition</p>
-
-                <p id="feels-like">Feels like --°</p>
-
-            </div>
-
-
-            <!-- Weather Details -->
-
-            <div class="weather-details">
-
-                <div class="detail-card">
-
-                    <span class="detail-icon">💧</span>
+                <div class="weather-card-top">
 
                     <div>
-                        <p>Humidity</p>
-                        <h4 id="humidity">--%</h4>
+                        <span class="eyebrow">TODAY'S WEATHER</span>
+
+                        <h2 id="city-name">Your happy place</h2>
+
+                        <p id="current-date">Waiting for a little sunshine...</p>
+                    </div>
+
+                    <span class="location-decoration">📍</span>
+
+                </div>
+
+
+                <div class="weather-main">
+
+                    <div class="temperature-info">
+
+                        <h3 id="temperature">--°</h3>
+
+                        <p id="weather-description">
+                            Weather is waiting!
+                        </p>
+
+                        <p id="feels-like">Feels like --°</p>
+
+                    </div>
+
+                    <div class="weather-illustration">
+                        <span id="weather-icon">🌤️</span>
+                        <div class="illustration-shadow"></div>
                     </div>
 
                 </div>
 
 
-                <div class="detail-card">
+                <!-- Weather Details -->
 
-                    <span class="detail-icon">💨</span>
+                <div class="weather-details">
 
-                    <div>
-                        <p>Wind Speed</p>
-                        <h4 id="wind-speed">-- km/h</h4>
+                    <div class="detail-card humidity-card">
+                        <span class="detail-icon">💧</span>
+
+                        <div>
+                            <p>Humidity</p>
+                            <h4 id="humidity">--%</h4>
+                        </div>
                     </div>
 
-                </div>
+
+                    <div class="detail-card wind-card">
+                        <span class="detail-icon">🍃</span>
+
+                        <div>
+                            <p>Wind speed</p>
+                            <h4 id="wind-speed">-- km/h</h4>
+                        </div>
+                    </div>
 
 
-                <div class="detail-card">
+                    <div class="detail-card feels-card">
+                        <span class="detail-icon">🌡️</span>
 
-                    <span class="detail-icon">🌡️</span>
-
-                    <div>
-                        <p>Feels Like</p>
-                        <h4 id="detail-feels-like">--°</h4>
+                        <div>
+                            <p>Feels like</p>
+                            <h4 id="detail-feels-like">--°</h4>
+                        </div>
                     </div>
 
                 </div>
 
             </div>
 
-        </section>
+
+            <!-- Forecast -->
+
+            <div class="forecast-section">
+
+                <div class="forecast-heading">
+
+                    <div>
+                        <span class="eyebrow">PLAN AHEAD</span>
+                        <h2>Next 5 days <span>🌈</span></h2>
+                    </div>
+
+                    <span class="forecast-decoration">☁️</span>
+
+                </div>
 
 
-        <!-- Five-Day Forecast -->
+                <div id="forecast-container" class="forecast-container">
 
-        <section class="forecast-section">
+                    <div class="forecast-placeholder">
+                        <span>🌤️</span>
+                        <p>Your forecast will appear here!</p>
+                    </div>
 
-            <div class="section-heading">
-
-                <h2>5-Day Forecast</h2>
-
-                <p>Coming days at a glance</p>
-
-            </div>
-
-            <div id="forecast-container" class="forecast-container">
-
-                <p class="forecast-placeholder">
-                    Search for a city to explore its forecast.
-                </p>
+                </div>
 
             </div>
 
@@ -157,16 +199,18 @@
 
         <footer class="footer">
 
+            <p>Made with ☁️ and a little sunshine</p>
+
             <p>
                 Weather data by
-                <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">
-                    Open-Meteo
-                </a>
+                <a href="https://open-meteo.com/" target="_blank"
+                    rel="noopener noreferrer">Open-Meteo</a>
             </p>
 
         </footer>
 
     </main>
+
 
     <script src="script.js"></script>
 
