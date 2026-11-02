@@ -9,39 +9,65 @@
 </head>
 <body>
 
-    <h1>Color Palette Generator</h1>
-    <p>Generate beautiful random colour combinations!</p>
+    <main class="container">
 
-    <div class="palette" id="palette">
+        <header>
+            <span class="decoration">✿</span>
+            <p class="tagline">A LITTLE COLOUR MAGIC</p>
+            <h1>Color Palette <span>Generator</span></h1>
+            <p class="subtitle">
+                Find beautiful colours for your next creative idea.
+            </p>
+            <span class="decoration">✧ ♡ ✧</span>
+        </header>
 
-        <div class="color-card">
-            <div class="color-box"></div>
-            <p>#FFB6C1</p>
-        </div>
+        <section class="palette-section">
 
-        <div class="color-card">
-            <div class="color-box"></div>
-            <p>#DDA0DD</p>
-        </div>
+            <div class="palette" id="palette">
 
-        <div class="color-card">
-            <div class="color-box"></div>
-            <p>#ADD8E6</p>
-        </div>
+                <div class="color-card">
+                    <div class="color-box"></div>
+                    <p class="color-code">#FFB6C1</p>
+                    <button class="copy-btn">Copy</button>
+                </div>
 
-        <div class="color-card">
-            <div class="color-box"></div>
-            <p>#98FB98</p>
-        </div>
+                <div class="color-card">
+                    <div class="color-box"></div>
+                    <p class="color-code">#DDA0DD</p>
+                    <button class="copy-btn">Copy</button>
+                </div>
 
-        <div class="color-card">
-            <div class="color-box"></div>
-            <p>#FFFACD</p>
-        </div>
+                <div class="color-card">
+                    <div class="color-box"></div>
+                    <p class="color-code">#ADD8E6</p>
+                    <button class="copy-btn">Copy</button>
+                </div>
 
-    </div>
+                <div class="color-card">
+                    <div class="color-box"></div>
+                    <p class="color-code">#98FB98</p>
+                    <button class="copy-btn">Copy</button>
+                </div>
 
-    <button id="generateBtn">Generate Palette</button>
+                <div class="color-card">
+                    <div class="color-box"></div>
+                    <p class="color-code">#FFFACD</p>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+            </div>
+
+            <button id="generateBtn">✦ Generate New Palette ✦</button>
+
+            <p id="message">Click a colour's Copy button to copy its HEX code.</p>
+
+        </section>
+
+        <footer>
+            Made with <span>♥</span> and a little creativity.
+        </footer>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
