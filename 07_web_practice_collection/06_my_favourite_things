@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourite Things</title>
+</head>
+<body>
+
+    <h1>My Favourite Things</h1>
+
+    <p>Here are a few things that I love!</p>
+
+    <h2>My Favourite Colour</h2>
+    <p>Pastel Pink</p>
+
+    <h2>My Favourite Food</h2>
+    <p>Chocolate Cake</p>
+
+    <h2>My Favourite Music</h2>
+    <p>Soft and peaceful music</p>
+
+    <h2>My Favourite Hobby</h2>
+    <p>Photography</p>
+
+</body>
+</html>
