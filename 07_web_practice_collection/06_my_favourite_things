@@ -15,48 +15,78 @@
         }
 
         body {
+            min-height: 100vh;
             background: #f8eff9;
             font-family: 'DM Sans', sans-serif;
             color: #594b65;
             padding: 45px 20px;
+            position: relative;
         }
 
         .page {
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
             background: #fffafd;
             padding: 45px;
             border-radius: 28px;
             position: relative;
-            box-shadow: 0 10px 35px rgba(115, 83, 130, 0.08);
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(115, 83, 130, 0.09);
+        }
+
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.45;
+            z-index: 0;
+        }
+
+        .circle-one {
+            width: 130px;
+            height: 130px;
+            background: #f8dce9;
+            top: -65px;
+            left: -55px;
+        }
+
+        .circle-two {
+            width: 100px;
+            height: 100px;
+            background: #e8defa;
+            bottom: 90px;
+            right: -50px;
         }
 
         .sticker {
             position: absolute;
+            z-index: 2;
             font-size: 30px;
         }
 
         .sticker-one {
-            top: 25px;
-            right: 30px;
+            top: 27px;
+            right: 32px;
             transform: rotate(15deg);
         }
 
         .sticker-two {
-            top: 190px;
-            left: 15px;
+            top: 205px;
+            left: 18px;
+            font-size: 25px;
             transform: rotate(-15deg);
         }
 
         .sticker-three {
-            bottom: 25px;
-            right: 25px;
+            bottom: 30px;
+            right: 28px;
             transform: rotate(12deg);
         }
 
         .header {
             text-align: center;
-            padding: 15px 15px 35px;
+            padding: 15px 20px 38px;
+            position: relative;
+            z-index: 1;
         }
 
         .eyebrow {
@@ -69,7 +99,7 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
+            font-size: 43px;
             color: #795e89;
             margin-bottom: 12px;
         }
@@ -87,27 +117,38 @@
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 22px;
+            font-size: 23px;
             color: #795e89;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
         }
 
         .favourites {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .card {
-            padding: 23px;
-            min-height: 145px;
-            border-radius: 20px;
-            background: #f5edfa;
-            transition: transform 0.25s ease;
+            min-height: 160px;
+            padding: 24px;
+            border-radius: 21px;
+            border: 1px solid rgba(180, 145, 195, 0.12);
+            box-shadow: 0 5px 15px rgba(115, 83, 130, 0.04);
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 22px rgba(115, 83, 130, 0.10);
+        }
+
+        .card:nth-child(1) {
+            background: #f5edfa;
         }
 
         .card:nth-child(2) {
@@ -122,15 +163,26 @@
             background: #fff4e9;
         }
 
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 17px;
+        }
+
         .card-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
+            font-size: 29px;
+        }
+
+        .mini-sticker {
+            font-size: 19px;
+            opacity: 0.8;
         }
 
         .card h2 {
             font-size: 16px;
-            margin-bottom: 7px;
             color: #695475;
+            margin-bottom: 7px;
         }
 
         .card p {
@@ -138,13 +190,31 @@
             color: #a092a9;
         }
 
+        .little-note {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            background: #fcf3f8;
+            border-radius: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .little-note p {
+            color: #947d9e;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
         .footer {
             text-align: center;
             border-top: 1px solid #f0e6f1;
-            margin-top: 35px;
+            margin-top: 30px;
             padding-top: 22px;
             color: #b19bb8;
             font-size: 12px;
+            position: relative;
+            z-index: 1;
         }
 
         @media (max-width: 550px) {
@@ -157,11 +227,19 @@
             }
 
             h1 {
-                font-size: 32px;
+                font-size: 33px;
             }
 
             .favourites {
                 grid-template-columns: 1fr;
+            }
+
+            .sticker {
+                font-size: 23px;
+            }
+
+            .sticker-two {
+                left: 5px;
             }
         }
     </style>
@@ -170,6 +248,9 @@
 <body>
 
     <main class="page">
+
+        <div class="decoration-circle circle-one"></div>
+        <div class="decoration-circle circle-two"></div>
 
         <div class="sticker sticker-one">🎀</div>
         <div class="sticker sticker-two">✿</div>
@@ -181,7 +262,7 @@
             <h1>My Favourite Things</h1>
 
             <p class="subtitle">
-                Here are a few things that I love!
+                Here are a few little things that make me happy.
             </p>
 
             <div class="decoration">✧ · ˚ · ✧</div>
@@ -193,25 +274,37 @@
             <div class="favourites">
 
                 <div class="card">
-                    <div class="card-icon">🌷</div>
+                    <div class="card-top">
+                        <span class="card-icon">🌷</span>
+                        <span class="mini-sticker">✨</span>
+                    </div>
                     <h2>Favourite Colour</h2>
                     <p>Pastel Pink</p>
                 </div>
 
                 <div class="card">
-                    <div class="card-icon">🍰</div>
+                    <div class="card-top">
+                        <span class="card-icon">🍰</span>
+                        <span class="mini-sticker">♡</span>
+                    </div>
                     <h2>Favourite Food</h2>
                     <p>Chocolate Cake</p>
                 </div>
 
                 <div class="card">
-                    <div class="card-icon">🎧</div>
+                    <div class="card-top">
+                        <span class="card-icon">🎧</span>
+                        <span class="mini-sticker">☁️</span>
+                    </div>
                     <h2>Favourite Music</h2>
                     <p>Soft and peaceful music</p>
                 </div>
 
                 <div class="card">
-                    <div class="card-icon">📸</div>
+                    <div class="card-top">
+                        <span class="card-icon">📸</span>
+                        <span class="mini-sticker">🌸</span>
+                    </div>
                     <h2>Favourite Hobby</h2>
                     <p>Photography</p>
                 </div>
@@ -219,8 +312,16 @@
             </div>
         </section>
 
+        <section class="little-note">
+            <p>
+                "Happiness is found in the little things." ♡
+                <br>
+                A tiny collection of things that make life special.
+            </p>
+        </section>
+
         <footer class="footer">
-            Made with love ♡
+            Made with love and a little bit of magic ♡
         </footer>
 
     </main>
