@@ -9,70 +9,155 @@ body {
     font-family: Arial, sans-serif;
     background-color: #fff5f7;
     color: #654b5b;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
     text-align: center;
-    padding: 50px 20px;
+}
+
+header {
+    padding: 25px 10px 40px;
+}
+
+.tagline {
+    color: #c47798;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 15px 0;
 }
 
 h1 {
-    font-size: 36px;
-    color: #c47798;
-    margin-bottom: 12px;
+    font-size: 42px;
+    color: #80566b;
+    margin-bottom: 15px;
 }
 
-p {
+h1 span {
+    color: #d88eac;
+}
+
+.subtitle {
     color: #927b89;
-    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.decoration {
+    display: block;
+    color: #d88eac;
+    font-size: 25px;
+    margin: 15px;
+}
+
+.palette-section {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 35px 20px;
+    box-shadow: 0 8px 25px rgba(180, 120, 150, 0.10);
 }
 
 .palette {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    margin: 35px auto;
+    gap: 18px;
+    margin-bottom: 35px;
 }
 
 .color-card {
-    background-color: white;
+    background-color: #fff9fb;
+    width: 170px;
     padding: 12px;
-    border-radius: 15px;
-    width: 150px;
-    box-shadow: 0 4px 12px rgba(180, 120, 150, 0.12);
+    border-radius: 17px;
+    border: 1px solid #f5e6ec;
+    transition: transform 0.2s;
+}
+
+.color-card:hover {
+    transform: translateY(-5px);
 }
 
 .color-box {
-    height: 130px;
-    border-radius: 10px;
+    height: 135px;
+    border-radius: 12px;
     background-color: #ffb6c1;
-    margin-bottom: 12px;
 }
 
-.color-card p {
-    font-size: 14px;
+.color-code {
+    color: #76566a;
     font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 14px;
+    margin: 14px 0 10px;
 }
 
-button {
+.copy-btn {
+    background-color: #f6e2ea;
+    color: #a56883;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.copy-btn:hover {
+    background-color: #efd0dd;
+}
+
+#generateBtn {
     background-color: #d88eac;
     color: white;
     border: none;
-    padding: 13px 28px;
+    padding: 14px 30px;
     border-radius: 25px;
     font-size: 15px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-button:hover {
+#generateBtn:hover {
     background-color: #c47798;
 }
 
+#message {
+    color: #a58b99;
+    font-size: 13px;
+    margin-top: 20px;
+    min-height: 18px;
+}
+
+footer {
+    margin-top: 30px;
+    color: #b28c9d;
+    font-size: 13px;
+}
+
+footer span {
+    color: #d88eac;
+}
+
 @media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
     h1 {
-        font-size: 28px;
+        font-size: 30px;
+    }
+
+    .palette-section {
+        padding: 25px 12px;
     }
 
     .color-card {
-        width: 130px;
+        width: 135px;
+    }
+
+    .color-box {
+        height: 110px;
     }
 }
