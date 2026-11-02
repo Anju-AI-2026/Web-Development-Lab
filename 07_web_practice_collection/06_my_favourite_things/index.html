@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Favourite Things ♡</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -15,231 +16,301 @@
         }
 
         body {
-            min-height: 100vh;
-            background: #f8eff9;
             font-family: 'DM Sans', sans-serif;
-            color: #594b65;
-            padding: 45px 20px;
-            position: relative;
+            background: #fff7f5;
+            color: #51434b;
+            padding: 35px 20px;
+            overflow-x: hidden;
         }
 
         .page {
-            max-width: 850px;
+            max-width: 1050px;
             margin: auto;
-            background: #fffafd;
-            padding: 45px;
-            border-radius: 28px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 12px 40px rgba(115, 83, 130, 0.09);
         }
 
-        .decoration-circle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.45;
-            z-index: 0;
-        }
-
-        .circle-one {
-            width: 130px;
-            height: 130px;
-            background: #f8dce9;
-            top: -65px;
-            left: -55px;
-        }
-
-        .circle-two {
-            width: 100px;
-            height: 100px;
-            background: #e8defa;
-            bottom: 90px;
-            right: -50px;
-        }
+        /* Decorative stickers */
 
         .sticker {
             position: absolute;
             z-index: 2;
-            font-size: 30px;
+            font-size: 38px;
+            user-select: none;
         }
 
-        .sticker-one {
-            top: 27px;
-            right: 32px;
+        .bow {
+            top: 10px;
+            right: 80px;
             transform: rotate(15deg);
         }
 
-        .sticker-two {
-            top: 205px;
-            left: 18px;
-            font-size: 25px;
+        .strawberry {
+            top: 170px;
+            left: -12px;
             transform: rotate(-15deg);
         }
 
-        .sticker-three {
-            bottom: 30px;
-            right: 28px;
+        .flower {
+            top: 380px;
+            right: -5px;
+            transform: rotate(15deg);
+        }
+
+        .cherry {
+            bottom: 200px;
+            left: -15px;
             transform: rotate(12deg);
         }
 
-        .header {
+        .butterfly {
+            bottom: 30px;
+            right: 25px;
+            transform: rotate(-12deg);
+        }
+
+        .star-one {
+            top: 250px;
+            right: 45px;
+            font-size: 25px;
+            color: #e5b85e;
+        }
+
+        .star-two {
+            top: 65px;
+            left: 65px;
+            font-size: 22px;
+            color: #d9a8bd;
+        }
+
+        /* Header */
+
+        header {
             text-align: center;
-            padding: 15px 20px 38px;
+            padding: 65px 20px 45px;
             position: relative;
-            z-index: 1;
         }
 
         .eyebrow {
-            color: #b18cbd;
-            font-size: 11px;
+            display: inline-block;
+            background: #f9e2e8;
+            color: #a76c83;
+            padding: 8px 17px;
+            border-radius: 30px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 43px;
-            color: #795e89;
-            margin-bottom: 12px;
+            font-size: clamp(42px, 7vw, 70px);
+            font-weight: 600;
+            color: #80566b;
+            line-height: 1.1;
+        }
+
+        h1 span {
+            color: #d68ba5;
+            font-style: italic;
         }
 
         .subtitle {
-            color: #a393aa;
-            font-size: 14px;
-        }
-
-        .decoration {
-            color: #d6a7c6;
             margin-top: 17px;
-            letter-spacing: 8px;
+            color: #987f8a;
+            font-size: 15px;
         }
 
-        .section-title {
+        .tiny-divider {
+            margin: 25px auto 0;
+            color: #d99ab0;
+            letter-spacing: 9px;
+            font-size: 17px;
+        }
+
+        /* Favourite cards */
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px 5px 22px;
+        }
+
+        .section-heading h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 23px;
-            color: #795e89;
-            margin-bottom: 22px;
-            position: relative;
-            z-index: 1;
+            font-size: 27px;
+            color: #80566b;
         }
 
-        .favourites {
+        .section-heading span {
+            color: #b58b9d;
+            font-size: 13px;
+        }
+
+        .cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            position: relative;
-            z-index: 1;
         }
 
         .card {
-            min-height: 160px;
-            padding: 24px;
-            border-radius: 21px;
-            border: 1px solid rgba(180, 145, 195, 0.12);
-            box-shadow: 0 5px 15px rgba(115, 83, 130, 0.04);
-            transition: transform 0.25s ease,
-                        box-shadow 0.25s ease;
+            position: relative;
+            min-height: 205px;
+            padding: 27px;
+            border-radius: 22px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(255,255,255,0.8);
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 22px rgba(115, 83, 130, 0.10);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(128, 86, 107, 0.10);
         }
 
-        .card:nth-child(1) {
-            background: #f5edfa;
+        .pink {
+            background: #f9e5eb;
         }
 
-        .card:nth-child(2) {
-            background: #fff0f3;
+        .lavender {
+            background: #eee8f8;
         }
 
-        .card:nth-child(3) {
-            background: #eff1ff;
+        .yellow {
+            background: #fbf0d9;
         }
 
-        .card:nth-child(4) {
-            background: #fff4e9;
+        .green {
+            background: #e8f0e5;
         }
 
         .card-top {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 17px;
+            align-items: center;
         }
 
         .card-icon {
-            font-size: 29px;
+            width: 46px;
+            height: 46px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            background: rgba(255,255,255,0.65);
+            font-size: 23px;
         }
 
-        .mini-sticker {
-            font-size: 19px;
-            opacity: 0.8;
+        .card-number {
+            font-size: 12px;
+            color: #a68b99;
+            letter-spacing: 2px;
         }
 
-        .card h2 {
-            font-size: 16px;
-            color: #695475;
-            margin-bottom: 7px;
+        .card h3 {
+            margin-top: 22px;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            color: #79576a;
         }
 
         .card p {
-            font-size: 13px;
-            color: #a092a9;
+            margin-top: 8px;
+            color: #927d87;
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 85%;
         }
 
-        .little-note {
-            margin-top: 30px;
-            padding: 20px;
-            text-align: center;
-            background: #fcf3f8;
-            border-radius: 18px;
+        .card-sticker {
+            position: absolute;
+            right: 22px;
+            bottom: 15px;
+            font-size: 43px;
+            transform: rotate(-12deg);
+            opacity: 0.9;
+        }
+
+        /* Little happiness section */
+
+        .note {
+            background: #fff;
+            border: 1px solid #f4e4e8;
+            border-radius: 24px;
+            padding: 30px;
+            margin-top: 25px;
             position: relative;
-            z-index: 1;
+            text-align: center;
         }
 
-        .little-note p {
-            color: #947d9e;
-            font-size: 13px;
+        .note h2 {
+            font-family: 'Playfair Display', serif;
+            color: #80566b;
+            font-size: 25px;
+        }
+
+        .note p {
+            color: #927d87;
+            font-size: 14px;
             line-height: 1.8;
+            margin: 12px auto 0;
+            max-width: 620px;
         }
 
-        .footer {
+        .little-things {
+            margin-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .little-things span {
+            background: #fff0f3;
+            color: #a36e83;
+            border-radius: 30px;
+            padding: 9px 15px;
+            font-size: 13px;
+        }
+
+        footer {
             text-align: center;
-            border-top: 1px solid #f0e6f1;
-            margin-top: 30px;
-            padding-top: 22px;
-            color: #b19bb8;
-            font-size: 12px;
-            position: relative;
-            z-index: 1;
+            padding: 35px 10px 15px;
+            color: #b28c9d;
+            font-size: 13px;
         }
 
-        @media (max-width: 550px) {
+        footer span {
+            color: #d68ba5;
+        }
+
+        @media (max-width: 650px) {
             body {
-                padding: 20px 12px;
+                padding: 15px;
             }
 
-            .page {
-                padding: 30px 20px;
+            header {
+                padding: 65px 10px 35px;
             }
 
-            h1 {
-                font-size: 33px;
-            }
-
-            .favourites {
+            .cards {
                 grid-template-columns: 1fr;
             }
 
             .sticker {
-                font-size: 23px;
+                font-size: 29px;
             }
 
-            .sticker-two {
-                left: 5px;
+            .bow {
+                right: 10px;
+            }
+
+            .strawberry {
+                left: 0;
+            }
+
+            .section-heading h2 {
+                font-size: 23px;
             }
         }
     </style>
@@ -249,79 +320,100 @@
 
     <main class="page">
 
-        <div class="decoration-circle circle-one"></div>
-        <div class="decoration-circle circle-two"></div>
+        <!-- Cute stickers -->
+        <div class="sticker bow">🎀</div>
+        <div class="sticker strawberry">🍓</div>
+        <div class="sticker flower">🌼</div>
+        <div class="sticker cherry">🍒</div>
+        <div class="sticker butterfly">🦋</div>
+        <div class="sticker star-one">✦</div>
+        <div class="sticker star-two">✧</div>
 
-        <div class="sticker sticker-one">🎀</div>
-        <div class="sticker sticker-two">✿</div>
-        <div class="sticker sticker-three">🍓</div>
+        <!-- Header -->
+        <header>
+            <div class="eyebrow">A LITTLE ABOUT ME</div>
 
-        <header class="header">
-            <p class="eyebrow">A LITTLE COLLECTION OF JOY</p>
-
-            <h1>My Favourite Things</h1>
+            <h1>My Favourite<br><span>Things ♡</span></h1>
 
             <p class="subtitle">
-                Here are a few little things that make me happy.
+                A tiny collection of things that make me happy.
             </p>
 
-            <div class="decoration">✧ · ˚ · ✧</div>
+            <div class="tiny-divider">✿ · ♡ · ✿</div>
         </header>
 
+        <!-- Favourite things -->
         <section>
-            <h2 class="section-title">Things I love...</h2>
+            <div class="section-heading">
+                <h2>Things I adore</h2>
+                <span>04 little favourites ✧</span>
+            </div>
 
-            <div class="favourites">
+            <div class="cards">
 
-                <div class="card">
+                <div class="card pink">
                     <div class="card-top">
-                        <span class="card-icon">🌷</span>
-                        <span class="mini-sticker">✨</span>
+                        <div class="card-icon">🎨</div>
+                        <span class="card-number">01 / COLOUR</span>
                     </div>
-                    <h2>Favourite Colour</h2>
-                    <p>Pastel Pink</p>
+                    <h3>Favourite Colour</h3>
+                    <p>Soft pink, lavender and all the pretty pastel shades.</p>
+                    <div class="card-sticker">🌷</div>
                 </div>
 
-                <div class="card">
+                <div class="card lavender">
                     <div class="card-top">
-                        <span class="card-icon">🍰</span>
-                        <span class="mini-sticker">♡</span>
+                        <div class="card-icon">🍰</div>
+                        <span class="card-number">02 / FOOD</span>
                     </div>
-                    <h2>Favourite Food</h2>
-                    <p>Chocolate Cake</p>
+                    <h3>Favourite Food</h3>
+                    <p>Sweet treats, delicious desserts and little food adventures.</p>
+                    <div class="card-sticker">🍒</div>
                 </div>
 
-                <div class="card">
+                <div class="card yellow">
                     <div class="card-top">
-                        <span class="card-icon">🎧</span>
-                        <span class="mini-sticker">☁️</span>
+                        <div class="card-icon">🎧</div>
+                        <span class="card-number">03 / MUSIC</span>
                     </div>
-                    <h2>Favourite Music</h2>
-                    <p>Soft and peaceful music</p>
+                    <h3>Favourite Music</h3>
+                    <p>Music that matches my mood and makes ordinary days special.</p>
+                    <div class="card-sticker">🎵</div>
                 </div>
 
-                <div class="card">
+                <div class="card green">
                     <div class="card-top">
-                        <span class="card-icon">📸</span>
-                        <span class="mini-sticker">🌸</span>
+                        <div class="card-icon">📷</div>
+                        <span class="card-number">04 / HOBBY</span>
                     </div>
-                    <h2>Favourite Hobby</h2>
-                    <p>Photography</p>
+                    <h3>Favourite Hobby</h3>
+                    <p>Exploring creative ideas, learning new things and making memories.</p>
+                    <div class="card-sticker">🦋</div>
                 </div>
 
             </div>
         </section>
 
-        <section class="little-note">
+        <!-- Little happiness note -->
+        <section class="note">
+            <h2>Little things, big happiness ♡</h2>
+
             <p>
-                "Happiness is found in the little things." ♡
-                <br>
-                A tiny collection of things that make life special.
+                Life becomes a little more beautiful when we notice
+                the small things. Here are a few simple joys I love.
             </p>
+
+            <div class="little-things">
+                <span>☁️ Cloudy days</span>
+                <span>🌸 Fresh flowers</span>
+                <span>🎀 Cute things</span>
+                <span>🍓 Sweet moments</span>
+                <span>✨ New ideas</span>
+            </div>
         </section>
 
-        <footer class="footer">
-            Made with love and a little bit of magic ♡
+        <footer>
+            Made with <span>♥</span> and a little bit of magic.
         </footer>
 
     </main>
