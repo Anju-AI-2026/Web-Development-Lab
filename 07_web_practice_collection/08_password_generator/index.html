@@ -1,28 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
+    <title>Password Studio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Password Generator</h1>
-    <p>Create a strong and secure password.</p>
+    <main class="container">
 
-    <input type="text" id="password" placeholder="Your password" readonly>
+        <header>
+            <h1>Password Studio ♡</h1>
+            <p>Create strong passwords and keep your accounts safer.</p>
+        </header>
 
-    <br><br>
+        <section class="password-section">
+            <label for="password">Your Password</label>
 
-    <label for="length">Password Length:</label>
-    <input type="number" id="length" value="12" min="4" max="30">
+            <div class="password-box">
+                <input type="text" id="password"
+                    placeholder="Your password will appear here" readonly>
 
-    <br><br>
+                <button id="copy-button">Copy</button>
+            </div>
 
-    <button id="generate">Generate Password</button>
-    <button id="copy">Copy Password</button>
+            <div class="strength-section">
+                <span>Strength:</span>
+                <span id="strength">Not generated</span>
+            </div>
 
+            <div class="strength-bar">
+                <div id="strength-fill"></div>
+            </div>
+        </section>
+
+        <section class="settings">
+            <h2>Password Settings</h2>
+
+            <label for="length">Password Length</label>
+
+            <div class="length-control">
+                <input type="range" id="length" min="4" max="32" value="12">
+                <span id="length-value">12</span>
+            </div>
+
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="uppercase" checked>
+                    Uppercase letters
+                </label>
+
+                <label>
+                    <input type="checkbox" id="lowercase" checked>
+                    Lowercase letters
+                </label>
+
+                <label>
+                    <input type="checkbox" id="numbers" checked>
+                    Numbers
+                </label>
+
+                <label>
+                    <input type="checkbox" id="symbols" checked>
+                    Symbols
+                </label>
+            </div>
+
+            <button id="generate-button">Generate Password</button>
+            <p id="message"></p>
+        </section>
+
+        <footer>
+            Made with care ♡
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
