@@ -86,7 +86,7 @@ signupForm.addEventListener("submit", async function (event) {
     };
 
     localStorage.setItem(ACCOUNT_KEY, JSON.stringify(accounts));
-    localStorage.setItem(SESSION_KEY, "true");
+    sessionStorage.setItem(SESSION_KEY, "true");
     localStorage.setItem("sweetBakeryUserName", name);
     localStorage.setItem("sweetBakeryUserEmail", email);
 
@@ -121,7 +121,7 @@ loginForm.addEventListener("submit", async function (event) {
         return;
     }
 
-    localStorage.setItem(SESSION_KEY, "true");
+    sessionStorage.setItem(SESSION_KEY, "true");
     localStorage.setItem("sweetBakeryUserName", account.name);
     localStorage.setItem("sweetBakeryUserEmail", email);
 
