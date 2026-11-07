@@ -30,13 +30,21 @@
             padding: 25px 20px;
         }
 
-        /* Navigation */
+        /* Header and Navigation */
 
-        nav {
+        header {
+            background: #f9e8ed;
+            border: 1px solid #f1dce4;
+            border-radius: 22px;
+            padding: 16px 25px;
+            margin-bottom: 20px;
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 5px 25px;
+            gap: 15px;
         }
 
         .logo {
@@ -45,15 +53,29 @@
             color: #b87991;
         }
 
+        .header-note {
+            font-size: 12px;
+            color: #997987;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            border-top: 1px solid #ebd3dd;
+            margin-top: 15px;
+            padding-top: 13px;
+        }
+
         nav a {
             text-decoration: none;
             color: #82717d;
             font-size: 13px;
-            margin-left: 20px;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #d58ba7;
+            color: #c9829e;
         }
 
         /* Hero */
@@ -104,6 +126,7 @@
             width: fit-content;
             margin-top: 22px;
             font-size: 13px;
+            transition: 0.3s;
         }
 
         .hero-button:hover {
@@ -144,7 +167,7 @@
             font-size: 12px;
         }
 
-        /* Main Bento Grid */
+        /* Bento Grid */
 
         .grid {
             display: grid;
@@ -252,29 +275,78 @@
             border-radius: 25px;
             font-size: 13px;
             white-space: nowrap;
+            transition: 0.3s;
         }
 
         .contact-button:hover {
             background: #bb8565;
         }
 
+        /* Footer */
+
         footer {
-            text-align: center;
-            padding: 25px 10px 10px;
-            color: #a18d98;
+            background: #674e5b;
+            color: #fff4f6;
+            border-radius: 22px;
+            margin-top: 25px;
+            padding: 28px 25px 18px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .footer-brand p {
             font-size: 12px;
+            color: #e8cbd5;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 17px;
+        }
+
+        .footer-links a {
+            color: #f9e8ed;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: #ffc7d9;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #8b707d;
+            margin-top: 22px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #e8cbd5;
         }
 
         /* Responsive */
 
         @media (max-width: 650px) {
-            nav {
+            .header-top {
                 flex-direction: column;
-                gap: 12px;
+                text-align: center;
             }
 
-            nav a {
-                margin: 0 7px;
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 17px;
             }
 
             .hero {
@@ -293,6 +365,15 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -301,18 +382,28 @@
 
     <div class="container">
 
-        <nav>
-            <div class="logo">anjuu's space ♡</div>
+        <!-- Header -->
 
-            <div>
+        <header id="home">
+
+            <div class="header-top">
+                <div class="logo">anjuu's space ♡</div>
+                <div class="header-note">A little corner of my world ✿</div>
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#education">Education</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
-            </div>
-        </nav>
+            </nav>
 
-        <header class="hero">
+        </header>
+
+        <!-- Hero -->
+
+        <section class="hero">
 
             <div class="hero-text">
                 <span class="hello">HELLO THERE! ✿</span>
@@ -336,7 +427,9 @@
                 <p>A little space about me and my journey.</p>
             </div>
 
-        </header>
+        </section>
+
+        <!-- Main Content -->
 
         <main class="grid">
 
@@ -389,7 +482,10 @@
 
         </main>
 
+        <!-- Contact -->
+
         <section class="card contact" id="contact">
+
             <div>
                 <span class="label">SAY HELLO!</span>
                 <h2>Let's connect ♡</h2>
@@ -400,10 +496,34 @@
                class="contact-button">
                 Email Me →
             </a>
+
         </section>
 
+        <!-- Footer -->
+
         <footer>
-            Made with love by Anjuu ♡ · © 2026
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+                    <h3>anjuu's space ♡</h3>
+                    <p>A little space to dream, learn and create.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                Made with love by Anjuu ♡ · © 2026 All rights reserved.
+            </div>
+
         </footer>
 
     </div>
