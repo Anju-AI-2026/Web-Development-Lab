@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Little Space | Anjuu</title>
+    <title>Anjuu | Personal Portfolio</title>
 
     <style>
         * {
@@ -21,358 +21,529 @@
             font-family: 'Segoe UI', sans-serif;
             background: #fffaf7;
             color: #51464f;
-            line-height: 1.6;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1080px;
             margin: auto;
-            padding: 25px 20px;
+            padding: 0 25px;
         }
 
-        /* Header and Navigation */
+        /* Header */
 
-        header {
-            background: #f9e8ed;
-            border: 1px solid #f1dce4;
-            border-radius: 22px;
-            padding: 16px 25px;
-            margin-bottom: 20px;
+        .site-header {
+            background: #fffaf7;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #f3e8e9;
         }
 
-        .header-top {
+        .navbar {
+            max-width: 1080px;
+            margin: auto;
+            padding: 17px 25px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
-            font-size: 21px;
-            font-weight: bold;
             color: #b87991;
+            font-size: 23px;
+            font-weight: 750;
+            letter-spacing: -1px;
         }
 
-        .header-note {
-            font-size: 12px;
-            color: #997987;
-        }
-
-        nav {
+        .nav-links {
             display: flex;
-            gap: 24px;
-            border-top: 1px solid #ebd3dd;
-            margin-top: 15px;
-            padding-top: 13px;
+            align-items: center;
+            gap: 27px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #82717d;
+        .nav-links a {
+            color: #776a74;
             font-size: 13px;
             font-weight: 600;
             transition: 0.3s;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: #c9829e;
+        }
+
+        .nav-contact {
+            background: #f4e1e8;
+            color: #a96f87 !important;
+            padding: 9px 17px;
+            border-radius: 25px;
         }
 
         /* Hero */
 
         .hero {
             display: grid;
-            grid-template-columns: 1.4fr 0.9fr;
-            gap: 18px;
-            margin-bottom: 18px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 25px;
+            align-items: center;
+            padding-top: 65px;
+            padding-bottom: 65px;
         }
 
         .hero-text {
-            background: #f9e8ed;
-            border-radius: 24px;
-            padding: 45px 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 25px 0;
         }
 
-        .hello {
+        .eyebrow {
+            display: inline-block;
             color: #b87991;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            background: #f9e8ed;
+            padding: 7px 15px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 650;
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
-            font-size: 43px;
+            font-size: clamp(38px, 5vw, 57px);
             line-height: 1.2;
             color: #674e5b;
-            margin: 12px 0;
+            margin: 20px 0 15px;
+        }
+
+        .hero h1 span {
+            color: #ce8ba5;
         }
 
         .hero-text p {
-            color: #826c78;
+            color: #827580;
             font-size: 15px;
-            max-width: 400px;
+            max-width: 480px;
         }
 
-        .hero-button {
-            display: inline-block;
-            background: #c9829e;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            width: fit-content;
-            margin-top: 22px;
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 27px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 11px 21px;
+            border-radius: 25px;
             font-size: 13px;
+            font-weight: 600;
             transition: 0.3s;
         }
 
-        .hero-button:hover {
-            background: #ae6c87;
+        .primary-btn {
+            background: #c9829e;
+            color: white;
         }
 
-        .hero-art {
+        .primary-btn:hover {
+            background: #ae6c87;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            background: white;
+            color: #a8758b;
+            border: 1px solid #ead8df;
+        }
+
+        .secondary-btn:hover {
+            background: #f9e8ed;
+        }
+
+        .hero-visual {
+            min-height: 310px;
+            border-radius: 30px;
             background: #eee9fa;
-            border-radius: 24px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 25px;
-            min-height: 250px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .flower {
-            width: 125px;
-            height: 125px;
+        .hero-circle {
+            width: 185px;
+            height: 185px;
             background: #fffaf0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 65px;
-            margin-bottom: 15px;
+            font-size: 95px;
+            box-shadow: 0 12px 35px #81739b18;
         }
 
-        .hero-art h3 {
-            color: #786b9b;
-            font-size: 17px;
-        }
-
-        .hero-art p {
-            color: #9386ac;
+        .floating-note {
+            position: absolute;
+            bottom: 25px;
+            right: 20px;
+            background: white;
+            padding: 10px 16px;
+            border-radius: 15px;
+            color: #81739b;
             font-size: 12px;
+            box-shadow: 0 5px 15px #81739b15;
         }
 
-        /* Bento Grid */
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 18px;
+        .tiny-star {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            color: #c18da8;
+            font-size: 30px;
         }
 
-        .card {
-            padding: 25px;
-            border-radius: 22px;
-            min-width: 0;
+        /* Section Common */
+
+        .section {
+            padding: 65px 0;
         }
 
-        .card h2 {
-            font-size: 20px;
-            margin: 5px 0 12px;
-            color: #635260;
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
         }
 
-        .card p {
-            font-size: 14px;
-            color: #827580;
-        }
-
-        .label {
+        .section-heading span {
+            color: #bd8298;
             font-size: 11px;
-            letter-spacing: 1.5px;
-            color: #b27d91;
+            letter-spacing: 2px;
             font-weight: bold;
-            text-transform: uppercase;
         }
 
-        .about {
-            background: #fff0dc;
+        .section-heading h2 {
+            color: #674e5b;
+            font-size: 30px;
+            margin-top: 5px;
         }
 
-        .education {
+        .section-heading p {
+            color: #92838c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* About */
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 22px;
+        }
+
+        .about-note {
+            background: #f9e8ed;
+            border-radius: 25px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-note .emoji {
+            font-size: 37px;
+            margin-bottom: 12px;
+        }
+
+        .about-note h3 {
+            color: #755565;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .about-note p {
+            color: #8c7280;
+            font-size: 14px;
+        }
+
+        .about-details {
+            background: white;
+            border: 1px solid #f1e7e7;
+            border-radius: 25px;
+            padding: 35px;
+        }
+
+        .about-details h3 {
+            color: #674e5b;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .about-details p {
+            color: #827580;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .detail-line {
+            padding-top: 15px;
+            border-top: 1px solid #f2e9eb;
+            margin-top: 15px;
+            color: #a8758b;
+            font-size: 13px;
+        }
+
+        /* Education */
+
+        .education-card {
             background: #e9f1e8;
+            border-radius: 25px;
+            padding: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
         }
 
-        .education h3 {
-            font-size: 15px;
-            color: #627b67;
+        .education-icon {
+            width: 55px;
+            height: 55px;
+            min-width: 55px;
+            background: #fffefa;
+            border-radius: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .education-card h3 {
+            color: #506b56;
+            font-size: 18px;
             margin-bottom: 5px;
         }
 
-        .skills {
-            background: #eee9fa;
+        .education-card p {
+            color: #748578;
+            font-size: 14px;
         }
 
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-            margin-top: 15px;
-        }
-
-        .skill {
-            background: #fffafc;
-            color: #82719b;
-            padding: 7px 13px;
+        .education-status {
+            display: inline-block;
+            margin-top: 12px;
+            background: #fffefa;
+            color: #64816a;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
         }
 
-        .interests {
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: #eee9fa;
+            border-radius: 20px;
+            padding: 23px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:nth-child(2),
+        .skill-card:nth-child(5) {
             background: #f9e8ed;
         }
 
-        .interest-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 12px;
+        .skill-card:nth-child(3),
+        .skill-card:nth-child(6) {
+            background: #fff0dc;
         }
 
-        .interest-item {
-            background: #fff9fa;
-            padding: 11px;
-            border-radius: 12px;
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card .skill-icon {
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        .skill-card h3 {
+            color: #67566b;
+            font-size: 15px;
+        }
+
+        /* Interests */
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .interest-card {
+            background: white;
+            border: 1px solid #f1e7e7;
+            border-radius: 19px;
+            padding: 22px 12px;
+            text-align: center;
+        }
+
+        .interest-card span {
+            font-size: 27px;
+        }
+
+        .interest-card p {
+            color: #827580;
             font-size: 12px;
-            color: #856b79;
+            margin-top: 8px;
         }
 
         /* Contact */
 
-        .contact {
-            background: #f8f0e8;
-            margin-top: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
+        .contact-section {
+            background: #f8e9ed;
+            border-radius: 28px;
+            padding: 45px 25px;
+            text-align: center;
+            margin-top: 30px;
         }
 
-        .contact h2 {
-            margin-bottom: 5px;
+        .contact-section h2 {
+            color: #674e5b;
+            font-size: 29px;
         }
 
-        .contact-button {
-            text-decoration: none;
-            background: #d39b79;
-            color: white;
-            padding: 10px 19px;
-            border-radius: 25px;
-            font-size: 13px;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
-
-        .contact-button:hover {
-            background: #bb8565;
+        .contact-section p {
+            color: #8c7280;
+            font-size: 14px;
+            margin: 8px 0 20px;
         }
 
         /* Footer */
 
-        footer {
+        .site-footer {
             background: #674e5b;
             color: #fff4f6;
-            border-radius: 22px;
-            margin-top: 25px;
-            padding: 28px 25px 18px;
+            margin-top: 65px;
+            padding: 45px 0 20px;
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr 0.7fr;
+            gap: 35px;
+            padding-bottom: 30px;
         }
 
-        .footer-brand h3 {
-            font-size: 20px;
-            margin-bottom: 5px;
+        .footer-brand h2 {
+            font-size: 23px;
+            margin-bottom: 10px;
         }
 
         .footer-brand p {
-            font-size: 12px;
             color: #e8cbd5;
+            font-size: 13px;
+            max-width: 280px;
         }
 
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 17px;
+        .footer-column h3 {
+            font-size: 14px;
+            margin-bottom: 13px;
+            color: #f9dce5;
         }
 
-        .footer-links a {
-            color: #f9e8ed;
-            text-decoration: none;
+        .footer-column a {
+            display: block;
+            color: #e8cbd5;
             font-size: 12px;
+            margin-bottom: 9px;
+            transition: 0.3s;
         }
 
-        .footer-links a:hover {
-            color: #ffc7d9;
+        .footer-column a:hover {
+            color: white;
         }
 
         .footer-bottom {
             border-top: 1px solid #8b707d;
-            margin-top: 22px;
-            padding-top: 15px;
+            padding-top: 18px;
             text-align: center;
-            font-size: 12px;
             color: #e8cbd5;
+            font-size: 12px;
         }
 
         /* Responsive */
 
-        @media (max-width: 650px) {
-            .header-top {
+        @media (max-width: 750px) {
+            .navbar {
                 flex-direction: column;
-                text-align: center;
             }
 
-            nav {
+            .nav-links {
                 justify-content: center;
                 flex-wrap: wrap;
-                gap: 12px 17px;
+                gap: 13px 18px;
             }
 
             .hero {
                 grid-template-columns: 1fr;
+                padding-top: 35px;
             }
 
-            .hero h1 {
-                font-size: 35px;
+            .hero-visual {
+                min-height: 260px;
             }
 
-            .grid {
+            .about-layout {
                 grid-template-columns: 1fr;
             }
 
-            .contact {
-                flex-direction: column;
-                align-items: flex-start;
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
+            .interests-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .footer-links {
-                justify-content: center;
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                padding: 0 17px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .education-card {
+                flex-direction: column;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
         }
     </style>
@@ -380,35 +551,35 @@
 
 <body>
 
-    <div class="container">
+    <!-- Website Header -->
 
-        <!-- Header -->
+    <header class="site-header">
+        <div class="navbar">
 
-        <header id="home">
+            <a href="#home" class="logo">anjuu's space ♡</a>
 
-            <div class="header-top">
-                <div class="logo">anjuu's space ♡</div>
-                <div class="header-note">A little corner of my world ✿</div>
-            </div>
-
-            <nav>
+            <nav class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#education">Education</a>
                 <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="#interests">Interests</a>
+                <a href="#contact" class="nav-contact">Let's Connect ↗</a>
             </nav>
 
-        </header>
+        </div>
+    </header>
 
-        <!-- Hero -->
+    <main>
 
-        <section class="hero">
+        <!-- Hero Section -->
+
+        <section class="container hero" id="home">
 
             <div class="hero-text">
-                <span class="hello">HELLO THERE! ✿</span>
+                <span class="eyebrow">HELLO THERE! WELCOME TO MY SPACE ✿</span>
 
-                <h1>I'm Anjuu!</h1>
+                <h1>Hi, I'm <span>Anjuu!</span></h1>
 
                 <p>
                     A curious Computer Science student who loves
@@ -416,117 +587,236 @@
                     learning something new every day.
                 </p>
 
-                <a href="#about" class="hero-button">
-                    Get to know me →
+                <div class="hero-buttons">
+                    <a href="#about" class="primary-btn">Discover More →</a>
+                    <a href="#contact" class="secondary-btn">Contact Me ♡</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <span class="tiny-star">✦</span>
+                <div class="hero-circle">🌷</div>
+                <div class="floating-note">Dream. Learn. Create. ♡</div>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+
+        <section class="container section" id="about">
+
+            <div class="section-heading">
+                <span>GET TO KNOW ME</span>
+                <h2>A Little About Me</h2>
+                <p>Some things about the person behind this little website.</p>
+            </div>
+
+            <div class="about-layout">
+
+                <div class="about-note">
+                    <div class="emoji">🌸</div>
+                    <h3>Learning something new, every day.</h3>
+                    <p>
+                        I believe every small step brings me closer
+                        to something bigger.
+                    </p>
+                </div>
+
+                <div class="about-details">
+                    <h3>Nice to meet you! ♡</h3>
+
+                    <p>
+                        I'm a Computer Science diploma student who
+                        enjoys programming, exploring technology and
+                        building useful projects.
+                    </p>
+
+                    <p>
+                        I love turning creative ideas into something
+                        real and improving my skills one project at a time.
+                    </p>
+
+                    <div class="detail-line">
+                        ✿ Curious mind · Creative heart · Tech enthusiast
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Education Section -->
+
+        <section class="container section" id="education">
+
+            <div class="section-heading">
+                <span>MY LEARNING JOURNEY</span>
+                <h2>Education</h2>
+                <p>Where my journey in technology is taking shape.</p>
+            </div>
+
+            <div class="education-card">
+
+                <div class="education-icon">🎓</div>
+
+                <div>
+                    <h3>Diploma in Computer Science Engineering</h3>
+                    <p>Government Polytechnic for Women, Hubli</p>
+                    <p>Currently pursuing my diploma.</p>
+                    <span class="education-status">Currently Studying</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Skills Section -->
+
+        <section class="container section" id="skills">
+
+            <div class="section-heading">
+                <span>MY TECH TOOLKIT</span>
+                <h2>Technical Skills</h2>
+                <p>Technologies I've been exploring and learning.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">✨</div>
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🐙</div>
+                    <h3>Git & GitHub</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Interests Section -->
+
+        <section class="container section" id="interests">
+
+            <div class="section-heading">
+                <span>OUTSIDE THE CLASSROOM</span>
+                <h2>My Interests</h2>
+                <p>Little things that keep me inspired.</p>
+            </div>
+
+            <div class="interests-grid">
+
+                <div class="interest-card">
+                    <span>💻</span>
+                    <p>Building Projects</p>
+                </div>
+
+                <div class="interest-card">
+                    <span>📚</span>
+                    <p>Learning Technology</p>
+                </div>
+
+                <div class="interest-card">
+                    <span>🌱</span>
+                    <p>Personal Growth</p>
+                </div>
+
+                <div class="interest-card">
+                    <span>🎨</span>
+                    <p>Creative Ideas</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Contact Section -->
+
+        <section class="container" id="contact">
+
+            <div class="contact-section">
+                <span class="eyebrow">HAVE SOMETHING IN MIND? ✿</span>
+
+                <h2>Let's Connect!</h2>
+
+                <p>
+                    I'd love to connect, exchange ideas and meet
+                    people who enjoy technology as much as I do.
+                </p>
+
+                <a href="mailto:your-email@example.com"
+                   class="primary-btn">
+                    Send Me an Email →
                 </a>
             </div>
 
-            <div class="hero-art">
-                <div class="flower">🌷</div>
-                <h3>Dream. Learn. Create.</h3>
-                <p>A little space about me and my journey.</p>
-            </div>
-
         </section>
 
-        <!-- Main Content -->
+    </main>
 
-        <main class="grid">
+    <!-- Website Footer -->
 
-            <section class="card about" id="about">
-                <span class="label">A LITTLE ABOUT ME</span>
-                <h2>Nice to meet you! ♡</h2>
+    <footer class="site-footer">
 
-                <p>
-                    I'm a Computer Science diploma student who enjoys
-                    programming, exploring technology and building
-                    useful projects. I love turning creative ideas
-                    into something real and improving a little every day.
-                </p>
-            </section>
+        <div class="container">
 
-            <section class="card education" id="education">
-                <span class="label">MY JOURNEY</span>
-                <h2>Education 📚</h2>
-
-                <h3>Diploma in Computer Science Engineering</h3>
-                <p>Government Polytechnic for Women, Hubli</p>
-                <p>Currently pursuing my diploma.</p>
-            </section>
-
-            <section class="card skills" id="skills">
-                <span class="label">THINGS I'M LEARNING</span>
-                <h2>My Skills 💻</h2>
-
-                <div class="skill-list">
-                    <span class="skill">Python</span>
-                    <span class="skill">HTML</span>
-                    <span class="skill">CSS</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">Git & GitHub</span>
-                    <span class="skill">SQL</span>
-                </div>
-            </section>
-
-            <section class="card interests">
-                <span class="label">LITTLE THINGS I LOVE</span>
-                <h2>My Interests 🌼</h2>
-
-                <div class="interest-list">
-                    <div class="interest-item">💻 Building projects</div>
-                    <div class="interest-item">📚 Learning</div>
-                    <div class="interest-item">🌱 Growing</div>
-                    <div class="interest-item">🎨 Creativity</div>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- Contact -->
-
-        <section class="card contact" id="contact">
-
-            <div>
-                <span class="label">SAY HELLO!</span>
-                <h2>Let's connect ♡</h2>
-                <p>I'd love to share ideas and meet new people!</p>
-            </div>
-
-            <a href="mailto:your-email@example.com"
-               class="contact-button">
-                Email Me →
-            </a>
-
-        </section>
-
-        <!-- Footer -->
-
-        <footer>
-
-            <div class="footer-content">
+            <div class="footer-main">
 
                 <div class="footer-brand">
-                    <h3>anjuu's space ♡</h3>
-                    <p>A little space to dream, learn and create.</p>
+                    <h2>anjuu's space ♡</h2>
+
+                    <p>
+                        A little corner of the internet where I share
+                        my learning journey, interests and love for technology.
+                    </p>
                 </div>
 
-                <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
                     <a href="#home">Home</a>
-                    <a href="#about">About</a>
+                    <a href="#about">About Me</a>
                     <a href="#education">Education</a>
                     <a href="#skills">Skills</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="#interests">My Interests</a>
                     <a href="#contact">Contact</a>
+                    <a href="#home">Back to Top ↑</a>
                 </div>
 
             </div>
 
             <div class="footer-bottom">
-                Made with love by Anjuu ♡ · © 2026 All rights reserved.
+                Made with ♥ by Anjuu · © 2026 All Rights Reserved.
             </div>
 
-        </footer>
+        </div>
 
-    </div>
+    </footer>
 
 </body>
 </html>
