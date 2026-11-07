@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Profile</title>
+    <title>My Little Space | Anjuu</title>
 
     <style>
         * {
@@ -12,99 +13,285 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f4ff;
-            color: #302b43;
+            font-family: 'Segoe UI', sans-serif;
+            background: #fffaf7;
+            color: #51464f;
             line-height: 1.6;
         }
 
-        header {
-            background: #6c5ce7;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px 20px;
         }
 
-        header h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+        /* Navigation */
 
         nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 5px 25px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #b87991;
         }
 
         nav a {
-            color: #6c5ce7;
             text-decoration: none;
-            margin: 0 12px;
-            font-weight: bold;
+            color: #82717d;
+            font-size: 13px;
+            margin-left: 20px;
         }
 
         nav a:hover {
-            color: #e84393;
+            color: #d58ba7;
         }
 
-        main {
-            max-width: 900px;
-            margin: 35px auto;
-            padding: 0 20px;
+        /* Hero */
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.4fr 0.9fr;
+            gap: 18px;
+            margin-bottom: 18px;
         }
 
-        section {
-            background: white;
+        .hero-text {
+            background: #f9e8ed;
+            border-radius: 24px;
+            padding: 45px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hello {
+            color: #b87991;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 43px;
+            line-height: 1.2;
+            color: #674e5b;
+            margin: 12px 0;
+        }
+
+        .hero-text p {
+            color: #826c78;
+            font-size: 15px;
+            max-width: 400px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: #c9829e;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            width: fit-content;
+            margin-top: 22px;
+            font-size: 13px;
+        }
+
+        .hero-button:hover {
+            background: #ae6c87;
+        }
+
+        .hero-art {
+            background: #eee9fa;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 14px;
-            box-shadow: 0 5px 18px #00000010;
+            min-height: 250px;
         }
 
-        h2 {
-            color: #6c5ce7;
+        .flower {
+            width: 125px;
+            height: 125px;
+            background: #fffaf0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
             margin-bottom: 15px;
         }
 
+        .hero-art h3 {
+            color: #786b9b;
+            font-size: 17px;
+        }
+
+        .hero-art p {
+            color: #9386ac;
+            font-size: 12px;
+        }
+
+        /* Main Bento Grid */
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 18px;
+        }
+
+        .card {
+            padding: 25px;
+            border-radius: 22px;
+            min-width: 0;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin: 5px 0 12px;
+            color: #635260;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #827580;
+        }
+
+        .label {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: #b27d91;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .about {
+            background: #fff0dc;
+        }
+
+        .education {
+            background: #e9f1e8;
+        }
+
+        .education h3 {
+            font-size: 15px;
+            color: #627b67;
+            margin-bottom: 5px;
+        }
+
         .skills {
+            background: #eee9fa;
+        }
+
+        .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 9px;
+            margin-top: 15px;
         }
 
         .skill {
-            background: #eeeaff;
-            color: #5746c7;
-            padding: 8px 15px;
+            background: #fffafc;
+            color: #82719b;
+            padding: 7px 13px;
             border-radius: 20px;
+            font-size: 12px;
         }
 
-        .contact-link {
-            display: inline-block;
+        .interests {
+            background: #f9e8ed;
+        }
+
+        .interest-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
             margin-top: 12px;
-            padding: 10px 20px;
-            background: #6c5ce7;
-            color: white;
+        }
+
+        .interest-item {
+            background: #fff9fa;
+            padding: 11px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #856b79;
+        }
+
+        /* Contact */
+
+        .contact {
+            background: #f8f0e8;
+            margin-top: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact h2 {
+            margin-bottom: 5px;
+        }
+
+        .contact-button {
             text-decoration: none;
-            border-radius: 8px;
+            background: #d39b79;
+            color: white;
+            padding: 10px 19px;
+            border-radius: 25px;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .contact-button:hover {
+            background: #bb8565;
         }
 
         footer {
-            background: #302b43;
-            color: white;
             text-align: center;
-            padding: 22px;
+            padding: 25px 10px 10px;
+            color: #a18d98;
+            font-size: 12px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 29px;
+        /* Responsive */
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
             }
 
             nav a {
-                display: inline-block;
-                margin: 6px;
+                margin: 0 7px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -112,72 +299,114 @@
 
 <body>
 
-    <header id="home">
-        <h1>Hello, I'm Anjuu!</h1>
-        <p>Computer Science Student | Future Software Engineer</p>
-    </header>
+    <div class="container">
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <nav>
+            <div class="logo">anjuu's space ♡</div>
 
-    <main>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm a Computer Science diploma student who enjoys
-                programming, exploring technology, and building
-                useful projects. I love learning new skills and
-                turning creative ideas into reality.
-            </p>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <h3>Diploma in Computer Science Engineering</h3>
-            <p>Government Polytechnic for Women, Hubli</p>
-            <p>Currently pursuing my diploma.</p>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills">
-                <span class="skill">Python</span>
-                <span class="skill">HTML</span>
-                <span class="skill">CSS</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">Git & GitHub</span>
-                <span class="skill">SQL</span>
+            <div>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </div>
-        </section>
+        </nav>
 
-        <section id="interests">
-            <h2>My Interests</h2>
-            <p>💻 Building projects</p>
-            <p>📚 Learning new technologies</p>
-            <p>🌱 Improving programming skills</p>
-            <p>🎨 Exploring creative ideas</p>
-        </section>
+        <header class="hero">
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Let's connect and share ideas!</p>
-            <a class="contact-link" href="mailto:your-email@example.com">
-                Send Me an Email
+            <div class="hero-text">
+                <span class="hello">HELLO THERE! ✿</span>
+
+                <h1>I'm Anjuu!</h1>
+
+                <p>
+                    A curious Computer Science student who loves
+                    exploring technology, creating things and
+                    learning something new every day.
+                </p>
+
+                <a href="#about" class="hero-button">
+                    Get to know me →
+                </a>
+            </div>
+
+            <div class="hero-art">
+                <div class="flower">🌷</div>
+                <h3>Dream. Learn. Create.</h3>
+                <p>A little space about me and my journey.</p>
+            </div>
+
+        </header>
+
+        <main class="grid">
+
+            <section class="card about" id="about">
+                <span class="label">A LITTLE ABOUT ME</span>
+                <h2>Nice to meet you! ♡</h2>
+
+                <p>
+                    I'm a Computer Science diploma student who enjoys
+                    programming, exploring technology and building
+                    useful projects. I love turning creative ideas
+                    into something real and improving a little every day.
+                </p>
+            </section>
+
+            <section class="card education" id="education">
+                <span class="label">MY JOURNEY</span>
+                <h2>Education 📚</h2>
+
+                <h3>Diploma in Computer Science Engineering</h3>
+                <p>Government Polytechnic for Women, Hubli</p>
+                <p>Currently pursuing my diploma.</p>
+            </section>
+
+            <section class="card skills" id="skills">
+                <span class="label">THINGS I'M LEARNING</span>
+                <h2>My Skills 💻</h2>
+
+                <div class="skill-list">
+                    <span class="skill">Python</span>
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Git & GitHub</span>
+                    <span class="skill">SQL</span>
+                </div>
+            </section>
+
+            <section class="card interests">
+                <span class="label">LITTLE THINGS I LOVE</span>
+                <h2>My Interests 🌼</h2>
+
+                <div class="interest-list">
+                    <div class="interest-item">💻 Building projects</div>
+                    <div class="interest-item">📚 Learning</div>
+                    <div class="interest-item">🌱 Growing</div>
+                    <div class="interest-item">🎨 Creativity</div>
+                </div>
+            </section>
+
+        </main>
+
+        <section class="card contact" id="contact">
+            <div>
+                <span class="label">SAY HELLO!</span>
+                <h2>Let's connect ♡</h2>
+                <p>I'd love to share ideas and meet new people!</p>
+            </div>
+
+            <a href="mailto:your-email@example.com"
+               class="contact-button">
+                Email Me →
             </a>
         </section>
 
-    </main>
+        <footer>
+            Made with love by Anjuu ♡ · © 2026
+        </footer>
 
-    <footer>
-        <p>Made with ♥ by Anjuu</p>
-        <p>© 2026 My Personal Profile</p>
-    </footer>
+    </div>
 
 </body>
 </html>
